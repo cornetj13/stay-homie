@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=PT+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <title>Stay Homie</title>
 </head>
 
@@ -21,18 +23,21 @@
         <div id="app-name-card">
             <h2 id="app-name">The Stay Homie</h2>
         </div>
-        <div id="random-icon-card">
-            <section id="random-icon"> random-icon </section>
+        <div id="refresh-icon-card">
+            <section id="refresh-icon"> random-icon </section>
         </div>
-        <h2>Today's Date</h2>
+        
     </header>
     <main>
         <div class="buttons">
+            <h2>Today's Date</h2>
+            <button id="holiday-button">Generate a Holiday</button>
+            <button id="horoscope-button">Generate a Horoscope</button>
             <button id="space-button"> Generate a Space Event</button>
             <button id="excuse-button"> Generate a Random Excuse</button>
         </div>
 
-        <section id="excuse"></section>
+        <section id="excuse-results"></section>
 
     </main>
 

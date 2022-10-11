@@ -25,8 +25,8 @@ excuseButton.addEventListener('click', async (event) => {
     //here we are console logging in order to make sure we are getting the parsed data we desire, which will help us add the right data to the page later on 
     console.log(excuseReturn[0].excuse);
     var excuseAnswer = document.createElement("h5");
-    excuseAnswer.textContent = "But even more than that " + excuseReturn[0].excuse + ", can you believe it?";
-    let header = document.getElementById('excuse');
+    excuseAnswer.textContent = "But even more than that... " + excuseReturn[0].excuse + " Can you believe it?";
+    let header = document.getElementById('excuse-results');
     console.log(excuseAnswer); console.log(header);
     header.appendChild(excuseAnswer)
     
