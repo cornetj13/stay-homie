@@ -3,7 +3,7 @@ console.log("hello, stay-homies")
 let sign = prompt("what is your sign")
 let cityName = prompt("what city are you in")
 let weatherURL
-let button = document.getElementById("getScope")
+let horoscopeButton = document.getElementById("horoscope-button")
 let weatherArray = []
 
 
@@ -88,7 +88,7 @@ async function searchLatLonSearchWeather (place) {
 }
 
 
-button.addEventListener("click", async (e) => {
+horoscopeButton.addEventListener("click", async (e) => {
     let horo
     e.preventDefault()
     try {
@@ -105,7 +105,7 @@ button.addEventListener("click", async (e) => {
     }
     let horoscope = horo.description + weatherCondition
 
-    let horoscopeOnPage = document.getElementById("horoscope")
-    horoscopeOnPage.innerText = horoscope;
+    let horoscopeOnPage = document.getElementById("excuse-results");
+    horoscopeOnPage.innerText = "Not to be dramatic, but my horoscope today read: '" + horoscope + "' Nobody deserves to be around that.";
 })
 

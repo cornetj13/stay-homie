@@ -25,6 +25,6 @@ spaceButton.addEventListener('click', async (event) => {
     console.log(excuseReturn[0].summary);
     var spaceAnswer = document.createElement("h5");
     spaceAnswer.textContent = "Plus in other important happenings " + excuseReturn[0].summary + "...and that's pretty serious!";
-    let header = document.getElementById('excuse');
+    let header = document.getElementById('excuse-results');
     header.appendChild(spaceAnswer);
 });

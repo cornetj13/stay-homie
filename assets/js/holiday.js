@@ -1,4 +1,5 @@
 var APIKey = "0f9da6ac-9370-47e6-8772-f0cc0cb723e7";
+var holidayButton = document.getElementById('holiday-button');
 var today = new Date()
 var year = 2021;
 var month = today.getMonth() + 1;
