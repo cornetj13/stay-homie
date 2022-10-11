@@ -7,7 +7,7 @@ let button = document.getElementById("getScope")
 let weatherArray = []
 
 
-async function getWorldNews() {
+async function getHoroscope() {
 
     const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
     let response = await fetch(URL, {
@@ -84,7 +84,7 @@ async function searchLatLonSearchWeather (place) {
             })
   
             console.log(weatherArray)
-            return(weatherArray[0].condition.description)
+            return(weatherArray[0].condition.decriptions)
 }
 
 
@@ -92,7 +92,7 @@ button.addEventListener("click", async (e) => {
     let horo
     e.preventDefault()
     try {
-        horo = await getWorldNews()
+        horo = await getHoroscope()
     } catch (e) {
         console.log(e)
          console.log(error)
@@ -108,6 +108,4 @@ button.addEventListener("click", async (e) => {
     let horoscopeOnPage = document.getElementById("horoscope")
     horoscopeOnPage.innerText = horoscope;
 })
-
-
 
