@@ -45,14 +45,14 @@ header {
   margin-top: 2%;
 }
 
-#random-icon-card {
+#refresh-icon-card {
   display:block;
   float:right;
   margin-right: 5px;
   width: 30%;
 }
 
-#random-icon  {
+#refresh-icon  {
   display: flex;
   justify-content: flex-end;
   margin-top: 6%;
@@ -69,6 +69,28 @@ header {
   height: 450px;
   margin-left: 10px;
   align-items: center;
+}
+
+#holiday-button {
+  width: 80%;
+  border-width: .5px;
+  border-radius: 10px;
+  align-items: center;
+  margin: 15px;
+  margin-left: 25px;
+  padding: 8px; 
+  box-shadow: 5px 5px;
+}
+
+#horoscope-button {
+  width: 80%;
+  border-width: .5px;
+  border-radius: 10px;
+  align-items: center;
+  margin: 15px;
+  margin-left: 25px;
+  padding: 8px; 
+  box-shadow: 5px 5px;
 }
 
 #excuse-button {
@@ -93,7 +115,7 @@ header {
   box-shadow: 5px 5px;
 }
 
-#excuse {
+#excuse-results {
   border-color: black;
   border-style: dashed;
   background-color: aliceblue;
