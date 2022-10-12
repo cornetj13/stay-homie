@@ -81,7 +81,10 @@ document.getElementById('submit-button').addEventListener('click', async (event)
                 else {
                 excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
                 }
-                let header = document.getElementById('excuse');
+                let header = document.getElementById('excuse-results');
+                let backgroundImage = document.getElementById('procrastinate');
+                backgroundImage.classList.add('hidden')
+                backgroundImage.classList.remove('show')
                 header.appendChild(excuseAnswer)
             }
         }

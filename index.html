@@ -34,26 +34,32 @@
         <div
             class="bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col flex-grow basis-1/4 gap-6 border-2 border-black border-dashed text-center">
             <h2 class="m-2 p-2">Today's Date</h2>
-            <button class="bg-blue-500 m-6 mt-2 p-2 border-2 border-black box-shadow hover:scale-105"
+            <button id="submit-button">submit</button>
+
+
+
+            <button class="on-button bg-blue-500 m-6 mt-2 p-2 border-2 border-black box-shadow hover:scale-105"
                 id="holiday-button">Generate a Holiday</button>
-            <button class="bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
+            <button class="on-button bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
                 id="horoscope-button">Generate a Horoscope</button>
-            <button class="bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105" id="space-button">
+            <button class="on-button bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
+                id="space-button">
                 Generate a Space Event</button>
-            <button class="bg-blue-500 m-6 mb-8 p-2 border-2 border-black box-shadow mb-8 hover:scale-105"
+            <button class="on-button bg-blue-500 m-6 mb-8 p-2 border-2 border-black box-shadow mb-8 hover:scale-105"
                 id="excuse-button"> Generate a Random Excuse</button>
         </div>
 
-        <section class="bg-yellow-400 flex-grow basis-3/4 border-2 border-black border-dashed background-image"
-            id="excuse-results">
+        <section class="bg-gray-200 flex-grow basis-3/4 border-2 border-black border-dashed" id="excuse-results">
+            <div id="procrastinate" class="show background-image"></div>
         </section>
     </main>
 
-    <script src="./assets/js/refresh.js"></script>
-    <!-- <script src="./assets/js/excuse.js"></script>
-    <script src="./assets/js/space.js"></script> -->
-    <!-- <script src="./assets/js/horoscope-weather.js"></script> -->
+    <script src="./assets/js/day.js"></script>
+    <script src="./assets/js/excuse.js"></script>
+    <script src="./assets/js/space.js"></script>
     <!-- <script src="./assets/js/holiday.js"></script> -->
+    <script src="./assets/js/horoscope-weather.js"></script>
+    <script src="./assets/js/submit.js"></script>
 </body>
 
 
