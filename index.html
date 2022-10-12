@@ -8,44 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=PT+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/35a90f0481.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Stay Homie</title>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
-        <div id="logo-card">
-            <section id="logo">Logo</section>
+    <header class="bg-gray-200 border-4 border-black border-dashed flex flex-row justify-between items-center p-6">
+        <div class="ml-8" id="logo-card">
+            <img src="./assets/images/logo-image.png" alt="The stay homie logo">
         </div>
         <div id="app-name-card">
-            <h2 id="app-name">The Stay Homie</h2>
+            <h2 class="text-4xl" id="app-name">The Stay Homie</i></h2>
         </div>
-        <div id="random-icon-card">
-            <section id="random-icon"> random-icon </section>
+        <div class="mr-8" id="refresh-btn-card">
+            <button class="p-6 border-2 border-black rounded-full hover:scale-110 fa-spin-hover" id="refresh-btn"><i
+                    class="fa-solid fa-rotate fa-xl"></i></button>
         </div>
-
     </header>
-    <main>
-        <div class="buttons">
-            <h2 id="date">Today's Date</h2>
-            <button id="submit-button">Submit</button>
-            <button class="on-button" id="space-button"> Generate a Space Event</button>
-            <button class="on-button" id="excuse-button"> Generate a Random Excuse</button>
-            <button class="on-button" id="holiday-button"> Generate a Holiday</button>
-            <button class="on-button" id="horoscope-button"> Generate a Horoscope</button>
+
+    <!-- Main -->
+    <main class="h-full flex flex-row gap-4 m-4">
+        <div
+            class="bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col flex-grow basis-1/4 gap-6 border-2 border-black border-dashed text-center">
+            <h2 class="m-2 p-2">Today's Date</h2>
+            <button class="bg-blue-500 m-6 mt-2 p-2 border-2 border-black box-shadow hover:scale-105"
+                id="holiday-button">Generate a Holiday</button>
+            <button class="bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
+                id="horoscope-button">Generate a Horoscope</button>
+            <button class="bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105" id="space-button">
+                Generate a Space Event</button>
+            <button class="bg-blue-500 m-6 mb-8 p-2 border-2 border-black box-shadow mb-8 hover:scale-105"
+                id="excuse-button"> Generate a Random Excuse</button>
         </div>
 
-        <section id="excuse"></section>
-
+        <section class="bg-yellow-400 flex-grow basis-3/4 border-2 border-black border-dashed background-image"
+            id="excuse-results">
+        </section>
     </main>
-    <script src="./assets/js/day.js"></script>
-    <script src="./assets/js/excuse.js"></script>
-    <script src="./assets/js/space.js"></script>
+
+    <script src="./assets/js/refresh.js"></script>
+    <!-- <script src="./assets/js/excuse.js"></script>
+    <script src="./assets/js/space.js"></script> -->
+    <!-- <script src="./assets/js/horoscope-weather.js"></script> -->
     <!-- <script src="./assets/js/holiday.js"></script> -->
-    <script src="./assets/js/horoscope-weather.js"></script>
-    <script src="./assets/js/submit.js"></script>
-    <!-- <script src="./assets/js/script.js"></script> -->
 </body>
 
 
