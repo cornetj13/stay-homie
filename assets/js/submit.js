@@ -3,7 +3,7 @@ let buttonsArray = [{
     name: 'space-button',
     onBool: 0,
     fn: getSpaceApi(),
-    key: 'summary',
+    key: 'url',
     element: 'space-button'
 },
 {
@@ -32,6 +32,7 @@ let buttonsArray = [{
 let  runTry = async (n)  => {
     try {
         excuseReturn = await buttonsArray[n].fn;
+        console.log
         return excuseReturn
     }
     catch(e) {
@@ -44,7 +45,7 @@ let button = document.getElementsByClassName('on-button')
 function makeRed() {
     if (this.style.background === 'red'){
         console.log('notred')
-        this.style.background = 'aliceblue'
+        this.style.background = 'rgb(229, 231, 235)'
     }
     else if (this.style.background != 'red'){
         console.log('red')
@@ -75,6 +76,7 @@ document.getElementById('submit-button').addEventListener('click', async (event)
                 let useKey = buttonsArray[i].key
                 let excuseAnswer = document.createElement("h5");
                 console.log(excuseReturn)
+                console.log(excuseReturn[0])
                 if (excuseReturn[0] != null){
                 excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
                 }
