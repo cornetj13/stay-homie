@@ -21,7 +21,7 @@
             <img src="./assets/images/logo-image.png" alt="The stay homie logo">
         </div>
         <div id="app-name-card">
-            <h2 class="text-4xl" id="app-name">The Stay Homie</i></h2>
+            <h2 class="text-7xl" id="app-name">The Stay Homie</i></h2>
         </div>
         <div class="mr-8" id="refresh-btn-card">
             <button class="p-6 border-2 border-black rounded-full hover:scale-110 fa-spin-hover" id="refresh-btn"><i
@@ -32,25 +32,35 @@
     <!-- Main -->
     <main class="h-full flex flex-row gap-4 m-4">
         <div
-            class="bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col flex-grow basis-1/4 gap-6 border-2 border-black border-dashed text-center">
+            class="bg-gradient-to-r from-yellow-400 to-yellow-300 flex flex-col flex-grow basis-1/4 gap-6 border-4 border-black border-dashed text-center">
             <h2 class="m-2 p-2">Today's Date</h2>
-            <button id="submit-button">submit</button>
+            <button id="submit-button">Submit</button>
 
 
 
-            <button class="on-button bg-blue-500 m-6 mt-2 p-2 border-2 border-black box-shadow hover:scale-105"
+            <button class="on-button bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="holiday-button">Generate a Holiday</button>
-            <button class="on-button bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
+            <button class="on-button bg-gray-200 m-6 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="horoscope-button">Generate a Horoscope</button>
-            <button class="on-button bg-blue-500 m-6 p-2 border-2 border-black box-shadow hover:scale-105"
+            <button class="on-button bg-gray-200 m-6 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="space-button">
                 Generate a Space Event</button>
-            <button class="on-button bg-blue-500 m-6 mb-8 p-2 border-2 border-black box-shadow mb-8 hover:scale-105"
+            <button class="on-button bg-gray-200 m-6 mb-8 p-2 border-2 border-black rounded box-shadow mb-8 hover:scale-105"
                 id="excuse-button"> Generate a Random Excuse</button>
         </div>
 
-        <section class="bg-gray-200 flex-grow basis-3/4 border-2 border-black border-dashed" id="excuse-results">
-            <div id="procrastinate" class="show background-image"></div>
+        <section class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed">
+            
+          <!--  <div id="procrastinate" class="show background-image"></div>-->
+          <h4 class="generated-excuse-header justify-center">Your Excuses:</h4>
+            <div  id="excuse-results" class="bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-scroll"></div>
+            <h4 class="email-buttons-header">Too lazy to write your boss? Let us do the work for you!</h4>
+            <div  id="personal-info-form" class="bg-gray-100 flex-grow mx-11 mt-9 items-baseline justify-center border-2 border-black w-11/12 h-36 text-xs">
+                <button id="boss-name-btn" class="form-buttonsbg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105 ">Boss' Name</button>
+                <button id="job-name-btn" class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Your job position</button>
+                <button id="other-info-btn" class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Other Info</button>
+                <button id="generate-email-btn" class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Generate an E-mail</button>
+            </div>
         </section>
     </main>
 
