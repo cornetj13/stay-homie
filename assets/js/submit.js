@@ -29,7 +29,6 @@ let buttonsArray = [{
 }
 ]
 
-
 let  runTry = async (n)  => {
     try {
         excuseReturn = await buttonsArray[n].fn;
@@ -51,7 +50,6 @@ function makeRed() {
         console.log('red')
         this.style.background = 'red'
     }
-    
     for (i = 0; i < buttonsArray.length; i++) {
         if (this.id === buttonsArray[i].element) {
             buttonsArray[i].onBool = !buttonsArray[i].onBool
