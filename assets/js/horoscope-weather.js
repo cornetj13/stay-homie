@@ -1,15 +1,16 @@
 console.log("hello, stay-homies")
 
-let sign = prompt("what is your sign")
+
 let cityName = prompt("what city are you in")
 let weatherURL
-let button = document.getElementById("getScope")
+let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
 
 
 async function getHoroscope() {
-
-    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
+    let sign = prompt("what is your sign")
+    console.log(sign)
+    let URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
     let response = await fetch(URL, {
         method: 'POST'
     })
@@ -88,24 +89,24 @@ async function searchLatLonSearchWeather (place) {
 }
 
 
-button.addEventListener("click", async (e) => {
-    let horo
-    e.preventDefault()
-    try {
-        horo = await getHoroscope()
-    } catch (e) {
-        console.log(e)
-         console.log(error)
-    }
-    try {
-        weatherCondition = await searchLatLonSearchWeather(cityName)
-    } catch {
-        console.log(e)
-        console.log(error)
-    }
-    let horoscope = horo.description + weatherCondition
+// buttonHoroscope.addEventListener("click", async (e) => {
+//     let horo
+//     e.preventDefault()
+//     try {
+//         horo = await getHoroscope()
+//     } catch (e) {
+//         console.log(e)
+//          console.log(error)
+//     }
+//     try {
+//         weatherCondition = await searchLatLonSearchWeather(cityName)
+//     } catch {
+//         console.log(e)
+//         console.log(error)
+//     }
+//     let horoscope = horo.description + weatherCondition
 
-    let horoscopeOnPage = document.getElementById("horoscope")
-    horoscopeOnPage.innerText = horoscope;
-})
+//     let horoscopeOnPage = document.getElementById("horoscope")
+//     horoscopeOnPage.innerText = horoscope;
+// })
 

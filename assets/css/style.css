@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: pt mono;
 }
+
 header {
   background-color: rgb(240, 237, 232);
   border-color: black;
@@ -13,12 +14,13 @@ header {
   height: 70px;
   display: flex;
   margin: 10px;
-  margin-right:10px; 
+  margin-right: 10px;
 }
+
 #logo-card {
-  display:block;
+  display: block;
   float: left;
-  margin-left:5px;
+  margin-left: 5px;
   width: 30%;
 }
 
@@ -46,13 +48,13 @@ header {
 }
 
 #random-icon-card {
-  display:block;
-  float:right;
+  display: block;
+  float: right;
   margin-right: 5px;
   width: 30%;
 }
 
-#random-icon  {
+#random-icon {
   display: flex;
   justify-content: flex-end;
   margin-top: 6%;
@@ -71,6 +73,8 @@ header {
   align-items: center;
 }
 
+/* these NEEEED to be classes. the js can work with ids, but not using classes on CSS  is ???? as far as i can tell they are exactly the same. This will all be fixed in tailwind anyways */
+
 #excuse-button {
   width: 80%;
   border-width: .5px;
@@ -78,7 +82,7 @@ header {
   align-items: center;
   margin: 15px;
   margin-left: 25px;
-  padding: 8px; 
+  padding: 8px;
   box-shadow: 5px 5px;
 }
 
@@ -89,7 +93,7 @@ header {
   align-items: center;
   margin: 15px;
   margin-left: 25px;
-  padding: 8px; 
+  padding: 8px;
   box-shadow: 5px 5px;
 }
 
@@ -97,9 +101,8 @@ header {
   border-color: black;
   border-style: dashed;
   background-color: aliceblue;
-  float: right; 
+  float: right;
   width: 68%;
   height: 450px;
   margin-right: -5px;
 }
-
