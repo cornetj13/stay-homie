@@ -103,6 +103,13 @@ console.log(year);
 console.log(month);
 console.log(day);
 
+
+
+function makeHoliday(){
+
+
+
+
 for (let i = 0; i < countryArrayTest.length; i++) {
   const countryElement = countryArrayTest[i];
   // console.log(countryElement);
@@ -125,6 +132,7 @@ for (let i = 0; i < countryArrayTest.length; i++) {
         if(data.holidays.length !== 0) {
           console.log("These are the holidays for " + data.holidays[0].country + ":");
           console.log(data.holidays);
+          
           var holidayArray = data.holidays
 
           for (let j = 0; j < holidayArray.length; j++) {
@@ -132,6 +140,7 @@ for (let i = 0; i < countryArrayTest.length; i++) {
             console.log(dataElement);
             console.log(dataElement.name);
           }
+          
         }
         // console.log("Sending holiday data to display data function.")
         // displayData(data, country);
@@ -143,4 +152,7 @@ for (let i = 0; i < countryArrayTest.length; i++) {
   .catch(function (error) {
     alert('Unable to connect to holiday API.');
   });
+}
+
+
 }

@@ -13,18 +13,18 @@ async function getSpaceApi() {
     return excuse
 }
 
-spaceButton.addEventListener('click', async (event) => {
-    let excuseReturn;
+// spaceButton.addEventListener('click', async (event) => {
+//     let excuseReturn;
 
-    try {
-        excuseReturn = await getSpaceApi();
-    }
-    catch {
-        console.log(error);
-    }
-    console.log(excuseReturn[0].summary);
-    var spaceAnswer = document.createElement("h5");
-    spaceAnswer.textContent = "Plus in other important happenings " + excuseReturn[0].summary + "...and that's pretty serious!";
-    let header = document.getElementById('excuse-results');
-    header.appendChild(spaceAnswer);
-});
+//     try {
+//         excuseReturn = await getSpaceApi();
+//     }
+//     catch {
+//         console.log(error);
+//     }
+//     console.log(excuseReturn[0].summary);
+//     var spaceAnswer = document.createElement("h5");
+//     spaceAnswer.textContent = "Plus in other important happenings " + excuseReturn[0].summary + "...and that's pretty serious!";
+//     let header = document.getElementById('excuse');
+//     header.appendChild(spaceAnswer);
+// });
