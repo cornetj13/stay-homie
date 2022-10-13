@@ -118,22 +118,43 @@ async function handleSubmit(event) {
             //     console.log(excuseReturn[useKey])
             //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
             // }
-            else if (excuseReturn[0] != null){
-            excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
-            console.log('array')
-            }
-            else {
-            excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
-            console.log('notarry')
-            }
+            // else if (excuseReturn[0] != null){
+            // excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
+            // console.log('array')
+            // }
+            // else {
+            // excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
+            // console.log('notarry')
+            // }
             let header = document.getElementById('excuse-results');
             let backgroundImage = document.getElementById('procrastinate');
-            backgroundImage.classList.add('hidden')
-            backgroundImage.classList.remove('show')
+            // backgroundImage.classList.add('hidden')
+            // backgroundImage.classList.remove('show')
             header.appendChild(excuseAnswer)
             submitButtonEl.classList.add('hidden');
+            document.getElementById('excuse-title').classList.add('show');
+            document.getElementById('excuse-title').classList.remove('hidden');
+
+            document.getElementById('excuse-text-box').classList.add('show');
+            document.getElementById('excuse-text-box').classList.remove('hidden');
+
+            document.getElementById('excuse-results').classList.add('show');
+            document.getElementById('excuse-results').classList.remove('hidden');
+
+
+            document.getElementById('astro-sign-input').classList.remove('show');
+            document.getElementById('astro-sign-input').classList.add('hidden');
+            document.getElementById('astro-sign-label').classList.remove('show');
+            document.getElementById('astro-sign-label').classList.add('hidden');
+            document.getElementById('location-input').classList.remove('show');
+            document.getElementById('location-input').classList.add('hidden');
+            document.getElementById('location-label').classList.remove('show');
+            document.getElementById('location-label').classList.add('hidden');
+
+            document.getElementById('email-info-form').classList.add('show');
+            document.getElementById('email-info-form').classList.remove('hidden');
         }
-    }
+    } 
 }
 
 /*  MAIN CODE  */

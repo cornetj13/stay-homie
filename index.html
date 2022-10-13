@@ -55,7 +55,7 @@
             <!-- Submit Buttons -->
             <button 
                 type="button"
-                class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black box-shadow hover:scale-105"
+                class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="submit-button"
             >
                 Submit
@@ -69,16 +69,19 @@
             <!-- <div id="procrastinate" class="show background-image"></div> -->
 
             <!-- Excuse Text Box -->
-            <div class="show" id="excuse-text-box">
-                <h4 class="hidden fun-font mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
+            <div class="hidden" id="excuse-text-box">
+                <h4 class="generated-excuse-header hidden mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
                 <div id="excuse-results"
-                    class="bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
-                    <div class="horoscope-local-input ">
-                        <label for="astro-sign" class="hidden astro-form">Astrological Sign:</label>
-                        <input type="text" class="hidden astro-form border-2 border-black items-center"
+                    class="results-container show  flex bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
+                    <div class="horoscope-local-input " id="horo-loca-input">
+                        <label id="astro-sign-label" for="astro-sign" class="astro-form hidden mx-6 mt-10 border-2 w-40 border-black rounded box-shadow content-center tracking-wider text-lg 
+                        bg-blue-300">♈♉♊♋♌♍<br>  Astrological Sign?<br>♎♏♐♑♒♓<br></label>
+                        <input type="text" class="astro-form hidden mx-6 mt-2 border-2 border-black rounded box-shadow items-center w-40"
                             id="astro-sign-input" name="astro-sign" value=""><br><br>
-                        <label for="location" class="hidden weather-info">Current Location:</label>
-                        <input type="text" class="hidden weather-info border-2 border-black items-center"
+                        <label id="location-label" for="location" class="weather-info hidden mx-6 mt-2 border-2 w-40 border-black rounded box-shadow content-center tracking-wider text-lg 
+                        bg-blue-300"> Current Location:</label>
+                        <input type="text" class="weather-info hidden border-2 border-black items-center mx-6 mt-2 border-2 w-40 border-black rounded box-shadow content-center tracking-wider text-lg 
+                        bg-blue-300"
                             id="location-input" name="location" value=""><br><br>
                     </div>
                 </div>
