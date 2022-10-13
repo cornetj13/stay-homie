@@ -6,7 +6,7 @@ console.log("This should fire on load 2");
 async function getSpaceApi() {
 
 
-    console.log("This should NOT fire on load 2");
+    
     var queryURL = "https://api.spaceflightnewsapi.net/v3/reports";
 
     let response = await fetch(queryURL);

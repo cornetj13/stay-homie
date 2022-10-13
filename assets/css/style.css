@@ -27,7 +27,8 @@ body {
   overflow: hidden;
 }
 
-.generated-excuse-header, .email-buttons-header {
+.generated-excuse-header,
+.email-buttons-header {
   font-family: bangers;
 }
 
@@ -49,4 +50,9 @@ body {
 
 #date {
   font-family: bangers;
+}
+
+textarea {
+  width: 50rem;
+  height: 20rem;
 }

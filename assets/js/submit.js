@@ -23,7 +23,7 @@ var buttonsArray = [
         name: 'holiday',
         onBool: false,
         fn: makeHoliday,
-        key: 'holidays',
+        key: 'holiday',
         element: 'holiday-button'
     },
     {
@@ -91,11 +91,11 @@ async function handleSubmit(event) {
             console.log(excuseReturn);
             // console.log(excuseReturn[0][useKey])
             console.log(useKey)
-            console.log(excuseReturn.description)
-            console.log(excuseReturn.useKey)
+         
 
             //returns excuse for space
             if (buttonsArray[i].name == 'space') {
+               console.log(excuseReturn[0][useKey])
                 let spaceExcuseSplit = excuseReturn[0][useKey].split('.')[0]
                 while (spaceExcuseSplit.includes(':')) {
                     spaceExcuseSplit = spaceExcuseSplit.split(/:(.*)/s)[1]
@@ -110,28 +110,29 @@ async function handleSubmit(event) {
                 console.log(excuseReturn[useKey])
                 excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said that ${excuseReturn[useKey]} I'm taking this to heart, and need your support.`
             }
-            if (buttonsArray[i].name == 'weather') {
+            if (buttonsArray[i].name === 'weather') {
                 console.log(excuseReturn[useKey])
                 excuseAnswer.textContent = `When I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
             }
-            // if (buttonsArray[i].name == 'holiday') {
-            //     console.log(excuseReturn[useKey])
-            //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
-            // }
-            else if (excuseReturn[0] != null){
-            excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
-            console.log('array')
+            if (buttonsArray[i].name == 'holiday') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `As a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}!`
             }
-            else {
-            excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
-            console.log('notarry')
-            }
+
             let header = document.getElementById('excuse-results');
+            console.log(header)
             let backgroundImage = document.getElementById('procrastinate');
+            console.log(backgroundImage)
             backgroundImage.classList.add('hidden')
             backgroundImage.classList.remove('show')
             header.appendChild(excuseAnswer)
             submitButtonEl.classList.add('hidden');
+            document.getElementById('excuse-title').classList.add('show')
+            document.getElementById('excuse-title').classList.remove('hidden')
+            document.getElementById('email-info-form').classList.add('show')
+            document.getElementById('email-info-form').classList.remove('hidden')
+            document.getElementById('excuse-text-box').classList.add('show')
+            document.getElementById('excuse-text-box').classList.remove('hidden')
         }
     }
 }

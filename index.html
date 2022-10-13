@@ -33,7 +33,8 @@
     <main class="h-full flex flex-row gap-4 m-4">
 
         <!-- Left-side Panel -->
-        <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 flex flex-col flex-grow basis-1/4 gap-6 border-4 border-black border-dashed text-center">
+        <div
+            class="bg-gradient-to-r from-yellow-400 to-yellow-300 flex flex-col flex-grow basis-1/4 gap-6 border-4 border-black border-dashed text-center">
 
             <!-- Today's Date -->
             <h2 class="m-2 p-2 text-4xl" id="date">Today's Date</h2>
@@ -53,11 +54,9 @@
                 id="excuse-button"> Generate a Random Excuse</button>
 
             <!-- Submit Buttons -->
-            <button 
-                type="button"
+            <button type="button"
                 class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black box-shadow hover:scale-105"
-                id="submit-button"
-            >
+                id="submit-button">
                 Submit
             </button>
         </div>
@@ -66,19 +65,19 @@
         <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed">
 
             <!-- Background Image on Load-->
-            <div id="procrastinate" class="show background-image"></div>
+            <div id="procrastinate" class="hidden background-image"></div>
 
             <!-- Excuse Text Box -->
             <div class="hidden" id="excuse-text-box">
-                <h4 class="generated-excuse-header mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
+                <h4 id="excuse-title" class="hidden generated-excuse-header mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
                 <div id="excuse-results"
                     class="bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
                     <div class="horoscope-local-input ">
-                        <label for="astro-sign" class="astro-form">Astrological Sign:</label>
-                        <input type="text" class="astro-form border-2 border-black items-center"
+                        <label for="astro-sign" class="hidden astro-form">Astrological Sign:</label>
+                        <input type="text" class="hidden astro-form border-2 border-black items-center"
                             id="astro-sign-input" name="astro-sign" value=""><br><br>
-                        <label for="location" class="weather-info">Current Location:</label>
-                        <input type="text" class="weather-info border-2 border-black items-center"
+                        <label for="location" class="hidden weather-info">Current Location:</label>
+                        <input type="text" class="hidden weather-info border-2 border-black items-center"
                             id="location-input" name="location" value=""><br><br>
                     </div>
                 </div>
@@ -104,6 +103,22 @@
                         an E-mail</button>
                 </div>
             </div>
+
+            <div class="show" id="email-product">
+
+                <div id="excuse-results"
+                    class="grid grid-cols-1 gap-0 justify-items-center bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 text-xs overflow-auto h-128">
+                    <h2 class="mx-60 mt-10 ps-8 justify-center text-lg">Your email!</h2>
+                    <textarea type="text" id="email-text" class="w-auto mt-4 bg-gray-100 text-md resize-both">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem natus praesentium, quos cupiditate dolores quibusdam commodi corrupti pariatur animi laboriosam. Ad in cumque necessitatibus eligendi. Totam aspernatur a fugiat accusamus.
+                    </textarea>
+                    <button type="button" id="copy-button" onclick="copyFunction()"
+                        class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">
+                        Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+
+
         </div>
     </main>
 
@@ -113,6 +128,7 @@
     <script src="./assets/js/holiday.js"></script>
     <script src="./assets/js/horoscope-weather.js"></script>
     <script src="./assets/js/inputappear.js"></script>
+    <script src="./assets/js/copy.js"></script>
     <script src="./assets/js/submit.js"></script>
 </body>
 

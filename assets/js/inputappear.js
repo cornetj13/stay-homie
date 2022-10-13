@@ -9,6 +9,8 @@ let weathButton = document.getElementById('weather-button');
 
 horoButton.addEventListener('click', function () {
     let horoInput = document.getElementsByClassName('astro-form');
+    document.getElementById('excuse-text-box').classList.add('show')
+    document.getElementById('excuse-text-box').classList.remove('hidden')
     //console.log(horoInput)
     for (let i = 0; i < horoInput.length; i++) {
         if (horoInput[i].classList.contains('hidden')) {
@@ -27,6 +29,8 @@ horoButton.addEventListener('click', function () {
 
 weathButton.addEventListener('click', function () {
     let weathInput = document.getElementsByClassName('weather-info');
+    document.getElementById('excuse-text-box').classList.add('show')
+    document.getElementById('excuse-text-box').classList.remove('hidden')
     for (let i = 0; i < weathInput.length; i++) {
         if (weathInput[i].classList.contains('hidden')) {
             weathInput[i].classList.remove('hidden');
@@ -40,12 +44,12 @@ weathButton.addEventListener('click', function () {
 
 //when any buttons are pressed make it so background goes away
 
-funButtons.addEventListener('click', function buttonsClicked () {
-    let backgroundImg = document.getElementById('procrastinate');
-    console.log(backgroundImg)
-    if (backgroundImg.classList.contains('show')) {
-        backgroundImg.classList.remove('show');
-        backgroundImg.classList.add('hidden');
-    }
+// funButtons.addEventListener('click', function buttonsClicked () {
+//     let backgroundImg = document.getElementById('procrastinate');
+//     console.log(backgroundImg)
+//     if (backgroundImg.classList.contains('show')) {
+//         backgroundImg.classList.remove('show');
+//         backgroundImg.classList.add('hidden');
+//     }
     
-})
+// })
