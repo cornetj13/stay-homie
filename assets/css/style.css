@@ -27,8 +27,12 @@ body {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 .generated-excuse-header,
 .email-buttons-header {
+=======
+.fun-font {
+>>>>>>> dev
   font-family: bangers;
 }
 
