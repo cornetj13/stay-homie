@@ -1,4 +1,4 @@
-console.log("hello, stay-homies")
+// console.log("hello, stay-homies")
 
 
 //let cityName = prompt("what city are you in")
@@ -92,24 +92,24 @@ async function searchLatLonSearchWeather (place) {
 }
 
 
-// buttonHoroscope.addEventListener("click", async (e) => {
-//     let horo
-//     e.preventDefault()
-//     try {
-//         horo = await getHoroscope()
-//     } catch (e) {
-//         console.log(e)
-//          console.log(error)
-//     }
-//     try {
-//         weatherCondition = await searchLatLonSearchWeather(cityName)
-//     } catch {
-//         console.log(e)
-//         console.log(error)
-//     }
-//     let horoscope = horo.description + weatherCondition
+buttonHoroscope.addEventListener("click", async (e) => {
+    let horo
+    e.preventDefault()
+    try {
+        horo = await getHoroscope()
+    } catch (e) {
+        console.log(e)
+        console.log(error)
+    }
+    try {
+        weatherCondition = await searchLatLonSearchWeather(cityName)
+    } catch {
+        console.log(e)
+        console.log(error)
+    }
+    let horoscope = horo.description + weatherCondition
 
-//     let horoscopeOnPage = document.getElementById("horoscope")
-//     horoscopeOnPage.innerText = horoscope;
-// })
+    let horoscopeOnPage = document.getElementById("horoscope")
+    horoscopeOnPage.innerText = horoscope;
+})
 
