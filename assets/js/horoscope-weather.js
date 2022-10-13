@@ -1,16 +1,19 @@
 console.log("hello, stay-homies")
 
 
-let cityName = prompt("what city are you in")
+//let cityName = prompt("what city are you in")
 let weatherURL
 let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
 
 
+
 async function getHoroscope() {
-    let sign = prompt("what is your sign")
-    console.log(sign)
-    let URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
+    let sign = document.getElementById('astro-sign-input');
+    console.log(666);
+    let astroVal = sign.value;
+    console.log(astroVal)
+    let URL = `https://aztro.sameerkumar.website/?sign=${astroVal}&day=today`;
     let response = await fetch(URL, {
         method: 'POST'
     })

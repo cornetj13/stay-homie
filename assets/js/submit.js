@@ -2,36 +2,43 @@
 let buttonsArray = [{
     name: 'space-button',
     onBool: 0,
-    fn: getSpaceApi(),
+    fn: getSpaceApi,
     key: 'summary',
     element: 'space-button'
 },
 {
     name: 'excuse-button',
     onBool: 0,
-    fn: getExcuseApi(),
+    fn: getExcuseApi,
     key: 'excuse',
     element: 'excuse-button'
 },
 {
     name: 'weather',
     // onBool: 0,
-    // fn: makeHoliday(),
+    // fn: makeHoliday,
     // key: 'holidays',
     // element: 'holiday-button'
 },
 {
     name: 'horoscope',
     oneBool: 0,
-    fn: getHoroscope(),
+    fn: getHoroscope,
     key: 'description',
     element: 'horoscope-button'
-}
+},
+{
+    name: 'weather',
+    onBool: 0,
+    fn: loadWeatherData,
+    key: 'weather',
+    element: 'weather-button'
+},
 ]
 
 let  runTry = async (n)  => {
     try {
-        excuseReturn = await buttonsArray[n].fn;
+        excuseReturn = await buttonsArray[n].fn();
         return excuseReturn
     }
     catch(e) {
