@@ -27,6 +27,10 @@ body {
   overflow: hidden;
 }
 
+.generated-excuse-header, .email-buttons-header {
+  font-family: bangers;
+}
+
 .hidden {
   display: none;
 }

@@ -1,7 +1,7 @@
-console.log("hello, stay-homies")
+// console.log("hello, stay-homies")
 
 
-// let cityName = prompt("what city are you in")
+//let cityName = prompt("what city are you in")
 let weatherURL
 // let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
@@ -9,11 +9,11 @@ let weatherArray = []
 
 
 async function getHoroscope() {
-    console.log('horoscope')
-    // let sign = prompt("what is your sign")
-    let sign = document.getElementById('sign').value
-    console.log(sign)
-    let URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
+    let sign = document.getElementById('astro-sign-input');
+    
+    let astroVal = sign.value;
+    console.log(astroVal)
+    let URL = `https://aztro.sameerkumar.website/?sign=${astroVal}&day=today`;
     let response = await fetch(URL, {
         method: 'POST'
     })
@@ -39,7 +39,7 @@ async function loadLatLon() {
 
 
 async function searchLatLonSearchWeather () {
-    let cityInput = document.getElementById('city').value
+    let cityInput = document.getElementById('location-input').value
     var weatherArray = []
     // if error log it. if not get coords
     
