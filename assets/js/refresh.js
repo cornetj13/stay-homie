@@ -1,7 +1,17 @@
-var refreshButton = document.getElementById('refresh-btn');
+/*  VARIABLES  */
+/* Element Selectors */
+var refreshBtn    = document.getElementById('refresh-btn');
+var excuseTextBox = document.getElementById('excuse-text-box');
+var emailInfoForm = document.getElementById('email-info-form');
+
+console.log("refresh script is live");
 
 var handleButtonClick = function () {
-  console.log("Hello there!")
+  console.log("Refresh!");
+  excuseTextBox.classList.add('show');
+  excuseTextBox.classList.remove('hidden');
+  emailInfoForm.classList.add('show');
+  emailInfoForm.classList.remove('hidden');
 };
 
-refreshButton.addEventListener('click', handleButtonClick);
+refreshBtn.addEventListener('click', handleButtonClick);
