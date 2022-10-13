@@ -46,3 +46,7 @@ body {
   -o-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
+
+#date {
+  font-family: bangers;
+}
