@@ -1,4 +1,4 @@
-console.log("hello, stay-homies")
+// console.log("hello, stay-homies")
 
 
 let cityName = prompt("what city are you in")
