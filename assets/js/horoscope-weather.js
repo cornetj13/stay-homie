@@ -5,7 +5,8 @@ console.log("hello, stay-homies")
 let weatherURL
 // let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
-let sign = document.getElementById('sign').value
+
+
 
 async function getHoroscope() {
     console.log('horoscope')
@@ -28,23 +29,24 @@ async function loadWeatherData() {
     return weatherData
 }
 
-async function loadLatLon(place) {
-    var cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${place}&limit=1&appid=41473ca700c922a2192404a846e94a4a`;
+async function loadLatLon() {
+    let cityInput = document.getElementById('city').value
+    var cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=1&appid=41473ca700c922a2192404a846e94a4a`;
     var response = await fetch(cordURL);
     var city = await response.json();
     return city
 }
 
 
-async function searchLatLonSearchWeather (place) {
-    
+async function searchLatLonSearchWeather () {
+    let cityInput = document.getElementById('city').value
     var weatherArray = []
     // if error log it. if not get coords
     
     let city = [];
     let weather = []
     try {
-        city = await loadLatLon(place)
+        city = await loadLatLon()
     }
     catch (e) {
         console.log("error")
@@ -76,7 +78,7 @@ async function searchLatLonSearchWeather (place) {
 
         weatherArray.push(
             {
-                city: cityName,
+                city: cityInput,
                 latitude: latitude,
                 longitude: longitude,
                 time: `${weather.list[0].dt_txt} GMT`,
@@ -87,28 +89,30 @@ async function searchLatLonSearchWeather (place) {
             })
   
             console.log(weatherArray)
-            return(weatherArray[0].condition.decriptions)
+            console.log(weatherArray[0].condition)
+            console.log(weatherArray[0].condition.description)
+            return(weatherArray[0].condition)
 }
 
 
-buttonHoroscope.addEventListener("click", async (e) => {
-    let horo
-    e.preventDefault()
-    try {
-        horo = await getHoroscope()
-    } catch (e) {
-        console.log(e)
-        console.log(error)
-    }
-    try {
-        weatherCondition = await searchLatLonSearchWeather(cityName)
-    } catch {
-        console.log(e)
-        console.log(error)
-    }
-    let horoscope = horo.description + weatherCondition
+// buttonHoroscope.addEventListener("click", async (e) => {
+//     let horo
+//     e.preventDefault()
+//     try {
+//         horo = await getHoroscope()
+//     } catch (e) {
+//         console.log(e)
+//         console.log(error)
+//     }
+//     try {
+//         weatherCondition = await searchLatLonSearchWeather(cityName)
+//     } catch {
+//         console.log(e)
+//         console.log(error)
+//     }
+//     let horoscope = horo.description + weatherCondition
 
-    let horoscopeOnPage = document.getElementById("horoscope")
-    horoscopeOnPage.innerText = horoscope;
-})
+//     let horoscopeOnPage = document.getElementById("horoscope")
+//     horoscopeOnPage.innerText = horoscope;
+// })
 

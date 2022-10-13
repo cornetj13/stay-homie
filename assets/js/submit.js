@@ -6,32 +6,40 @@ var excuseButtonClass = document.getElementsByClassName('on-button');
 /* Global Variables */
 var buttonsArray = [
     {
-        name: 'space-button',
+        name: 'space',
         onBool: false,
-        fn: getSpaceApi(),
+        fn: getSpaceApi,
         key: 'summary',
         element: 'space-button'
     },
     {
-        name: 'excuse-button',
+        name: 'excuse',
         onBool: false,
-        fn: getExcuseApi(),
+        fn: getExcuseApi,
         key: 'excuse',
         element: 'excuse-button'
     },
     {
         name: 'holiday',
         onBool: false,
-        fn: makeHoliday(),
+        fn: makeHoliday,
         key: 'holidays',
         element: 'holiday-button'
     },
     {
         name: 'horoscope',
         oneBool: false,
-        fn: getHoroscope(),
+        fn: getHoroscope,
         key: 'description',
         element: 'horoscope-button'
+    },
+    {
+        name: 'weather',
+        oneBool: false,
+        fn: searchLatLonSearchWeather,
+        key: 'description',
+        element: 'weather-button'
+
     }
 ];
 
@@ -40,7 +48,7 @@ var buttonsArray = [
 let callExcuseFunction = async (i)  => {
     try {
         console.log("This is entering callExcuseFunction: ");
-        excuseReturn = await buttonsArray[i].fn;
+        let excuseReturn = await buttonsArray[i].fn();
         console.log("This is from callExcuseFunction: ");
         console.log(excuseReturn);
         return excuseReturn
@@ -81,17 +89,51 @@ async function handleSubmit(event) {
             let excuseAnswer = document.createElement("h5");
             console.log("This is from the event listener: ");
             console.log(excuseReturn);
-            if (excuseReturn[0] != null){
+            // console.log(excuseReturn[0][useKey])
+            console.log(useKey)
+            console.log(excuseReturn.description)
+            console.log(excuseReturn.useKey)
+
+            //returns excuse for space
+            if (buttonsArray[i].name == 'space') {
+                let spaceExcuseSplit = excuseReturn[0][useKey].split('.')[0]
+                while (spaceExcuseSplit.includes(':')) {
+                    spaceExcuseSplit = spaceExcuseSplit.split(/:(.*)/s)[1]
+                }
+                excuseAnswer.textContent = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`
+            }
+            if (buttonsArray[i].name == 'excuse') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]}. I need the day off.`
+            }
+            if (buttonsArray[i].name == 'horoscope') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said that ${excuseReturn[useKey]} I'm taking this to heart, and need your support.`
+            }
+            if (buttonsArray[i].name == 'weather') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `When I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
+            }
+            // if (buttonsArray[i].name == 'holiday') {
+            //     console.log(excuseReturn[useKey])
+            //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
+            // }
+            else if (excuseReturn[0] != null){
             excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
+            console.log('array')
             }
             else {
             excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
+            console.log('notarry')
             }
             let header = document.getElementById('excuse-results');
             let backgroundImage = document.getElementById('procrastinate');
             backgroundImage.classList.add('hidden')
             backgroundImage.classList.remove('show')
             header.appendChild(excuseAnswer)
+
+            submitButtonEl.classList.add('hidden');
+
         }
     }
 }
