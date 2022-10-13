@@ -131,9 +131,7 @@ async function handleSubmit(event) {
             backgroundImage.classList.add('hidden')
             backgroundImage.classList.remove('show')
             header.appendChild(excuseAnswer)
-
             submitButtonEl.classList.add('hidden');
-
         }
     }
 }
