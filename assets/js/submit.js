@@ -2,28 +2,28 @@
 let buttonsArray = [{
     name: 'space-button',
     onBool: 0,
-    fn: getSpaceApi(),
+    fn: getSpaceApi,
     key: 'url',
     element: 'space-button'
 },
 {
     name: 'excuse-button',
     onBool: 0,
-    fn: getExcuseApi(),
+    fn: getExcuseApi,
     key: 'excuse',
     element: 'excuse-button'
 },
 {
     name: 'weather',
     // onBool: 0,
-    // fn: makeHoliday(),
+    // fn: makeHoliday,
     // key: 'holidays',
     // element: 'holiday-button'
 },
 {
     name: 'horoscope',
     oneBool: 0,
-    fn: getHoroscope(),
+    fn: getHoroscope,
     key: 'description',
     element: 'horoscope-button'
 }
@@ -31,7 +31,7 @@ let buttonsArray = [{
 
 let  runTry = async (n)  => {
     try {
-        excuseReturn = await buttonsArray[n].fn;
+        excuseReturn = await buttonsArray[n].fn();
         console.log
         return excuseReturn
     }
@@ -76,7 +76,7 @@ document.getElementById('submit-button').addEventListener('click', async (event)
                 let useKey = buttonsArray[i].key
                 let excuseAnswer = document.createElement("h5");
                 console.log(excuseReturn)
-                console.log(excuseReturn[0])
+                
                 if (excuseReturn[0] != null){
                 excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
                 }

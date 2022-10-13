@@ -5,10 +5,12 @@ console.log("hello, stay-homies")
 let weatherURL
 // let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
-
+let sign = document.getElementById('sign').value
 
 async function getHoroscope() {
+    console.log('horoscope')
     // let sign = prompt("what is your sign")
+    let sign = document.getElementById('sign').value
     console.log(sign)
     let URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
     let response = await fetch(URL, {

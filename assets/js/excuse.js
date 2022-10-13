@@ -3,6 +3,7 @@ let excuseButton = document.getElementById('excuse-button');
 //we have created an async function called getExcuseApi()
 async function getExcuseApi(){
     //here we are creating a variable to store the api url
+    console.log('excuse')
     let queryURL = "https://excuser.herokuapp.com/v1/excuse/office";
     // let response is saying that we are intitializing a variable (response) that will be equal to our results from the fetch that will return in future (because they take more time to respond, etc)
     let response = await fetch(queryURL);
