@@ -98,6 +98,8 @@ async function handleSubmit(event) {
 
 /*  MAIN CODE  */
 /* Button Click Events */
+console.log("Program start.");
+
 for (i = 0; i < excuseButtonClass.length; i++) {
     excuseButtonClass[i].addEventListener('click', makeRed, false);
     console.log('addedlistener');
@@ -105,8 +107,3 @@ for (i = 0; i < excuseButtonClass.length; i++) {
 
 /* Submit Click Event */
 submitButtonEl.addEventListener('click', handleSubmit);
-
-
-
-
-
