@@ -1,3 +1,6 @@
+let copyButton = document.getElementById('copy-button')
+
+
 function copyFunction() {
     let copyText = document.getElementById('email-text').value
     console.log(copyText)
@@ -8,3 +11,6 @@ function copyFunction() {
     });
     
 }
+
+
+copyButton.addEventListener('click', copyFunction);
