@@ -128,7 +128,7 @@ async function handleSubmit(event) {
                 excuseAnswer.appendChild(excuseBr);
             }
             if (buttonsArray[i].name == 'horoscope') {
-                console.log(excuseReturn[useKey])
+            
                 excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`
                 buttonsArray[i].excuse[0] = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`
                 buttonsArray[i].excuse[1] = `I was told the future by a respected source: '${excuseReturn[useKey]}' I think this may cause me to harm the company if I come into work today.`
@@ -252,14 +252,18 @@ generateEmailButton.addEventListener('click', function () {
         }
 
         for (i=0; i < buttonsArray.length; i++) {
-            
+
             if (iterateWhenExcuseAdded != 0) {
-                excuseEmail.push(' Also ')
+                excuseEmail.push(' Also, ')
+                console.log(iterateWhenExcuseAdded)
+                console.log(buttonsArray[1].excuse[0])
                 iterateWhenExcuseAdded --
+
             }
-            if (buttonsArray[i].excuse != undefined){
+            if (buttonsArray[i].excuse != ''){
                 excuseEmail.push(buttonsArray[i].excuse[0])
                 iterateWhenExcuseAdded ++
+                console.log(excuseEmail)
             }
         }
         
@@ -282,12 +286,15 @@ generateEmailButton.addEventListener('click', function () {
         for (i=0; i < buttonsArray.length; i++) {
             
             if (iterateWhenExcuseAdded != 0) {
-                excuseEmail.push(' Also ')
+                excuseEmail.push(' Also, ')
+                console.log(iterateWhenExcuseAdded)
+                console.log(buttonsArray[1].excuse[2])
                 iterateWhenExcuseAdded --
             }
-            if (buttonsArray[i].excuse != undefined){
+            if (buttonsArray[i].excuse != ''){
                 excuseEmail.push(buttonsArray[i].excuse[2])
                 iterateWhenExcuseAdded ++
+                console.log(excuseEmail)
             }
         }
         if (signOff !== '') {
@@ -308,13 +315,17 @@ generateEmailButton.addEventListener('click', function () {
 
         for (i=0; i < buttonsArray.length; i++) {
             
-            if (iterateWhenExcuseAdded != 0) {
-                excuseEmail.push(' Also ')
-                iterateWhenExcuseAdded --
-            }
-            if (buttonsArray[i].excuse != undefined){
+
+            if (buttonsArray[i].excuse != ''){
+                if (iterateWhenExcuseAdded != 0) {
+                    excuseEmail.push(' Also, ')
+                    console.log(iterateWhenExcuseAdded)
+                    iterateWhenExcuseAdded --
+                    console.log(buttonsArray[1].excuse[1])
+                }
                 excuseEmail.push(buttonsArray[i].excuse[1])
                 iterateWhenExcuseAdded ++
+                console.log(excuseEmail)
             }
         }
         if (signOff !== '') {

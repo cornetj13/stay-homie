@@ -6,21 +6,26 @@ let weatherURL
 // let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
 
-
+let astroSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 
 async function getHoroscope() {
-    let sign = document.getElementById('astro-sign-input');
-    
-    let astroVal = sign.value;
-    console.log(astroVal)
-    let URL = `https://aztro.sameerkumar.website/?sign=${astroVal}&day=today`;
-    let response = await fetch(URL, {
+    let sign = document.getElementById('astro-sign-input').value;
+    let signLower = sign.toLowerCase()
+
+    if (astroSigns.includes(signLower)) {
+        console.log(signLower)
+        let URL = `https://aztro.sameerkumar.website/?sign=${signLower}&day=today`;
+        let response = await fetch(URL, {
         method: 'POST'
     })
     let data = await response.json()
 
     return data
-    
+}
+
+else {
+    return undefined
+}
 }
 
 async function loadWeatherData() {
