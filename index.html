@@ -66,11 +66,11 @@
         <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed">
 
             <!-- Background Image on Load-->
-            <div id="procrastinate" class="show background-image"></div>
+            <!-- <div id="procrastinate" class="show background-image"></div> -->
 
             <!-- Excuse Text Box -->
-            <div class="hidden" id="excuse-text-box">
-                <h4 class="generated-excuse-header mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
+            <div class="show" id="excuse-text-box">
+                <h4 class="hidden fun-font mx-80 mt-9 pl-24 text-lg">Your Excuses:</h4>
                 <div id="excuse-results"
                     class="bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
                     <div class="horoscope-local-input ">
@@ -85,35 +85,41 @@
             </div>
 
             <!-- Email Info Form -->
-            <div class="hidden" id="email-info-form">
-                <h4 class="email-buttons-header mx-60 mt-10 pl-8 justify-center  text-lg">Too lazy to write your
-                    boss? Let us do the work for you!</h4>
-                <div id="personal-info-form"
-                    class="bg-gray-100 flex-grow mx-11 mt-9 items-baseline justify-center border-2 border-black w-11/12 h-36 text-xs">
-                    <button id="boss-name-btn"
-                        class="form-buttonsbg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105 ">Boss'
-                        Name</button>
-                    <button id="job-name-btn"
-                        class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Your
-                        job position</button>
-                    <button id="other-info-btn"
-                        class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Other
-                        Info</button>
-                    <button id="generate-email-btn"
-                        class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">Generate
-                        an E-mail</button>
+            <div class="show m-6" id="email-info-form">
+                <h4 class="fun-font mx-40 justify-center text-lg text-center">Too lazy to write your boss? Let us do the hard work for you!</h4>
+                <div id="personal-info-form" class="grid grid-cols-3 bg-gray-100 mt-6 items-baseline border-2 border-black h-96 text-xs text-center">
+                    <h4 class="col-span-3 mt-2 text-lg">Give us some optional information:</h4>
+                    <div id="boss-name" class="bg-gray-200 mx-6 mt-4 p-2 border-2 border-black rounded">
+                        <label for="boss-name-input" class="p-4">What do you call your boss?</label>
+                        <input type="text" class="w-52 m-2 p-2 border-2 border-black text-center hover:scale-105" id="boss-name-input" name="boss-name" value="" placeholder="The devil himself.">
+                    </div>
+                    <div id="profession-title" class="bg-gray-200 mx-6 mt-2 p-2 border-2 border-black rounded">
+                        <label for="profession-title-input" class="p-4">What is your profession?</label>
+                        <input type="text" class="w-52 m-2 p-2 border-2 border-black text-center hover:scale-105" id="profession-title-input" name="profession-title" value="" placeholder="Professional time waster.">
+                    </div>
+                    <div id="sign-off" class="bg-gray-200 mx-6 mt-2 p-2 border-2 border-black rounded">
+                        <label for="sign-off-input" class="p-4">Do you have a sign-off?</label>
+                        <input type="text" class="w-52 m-2 p-2 border-2 border-black text-center hover:scale-105" id="sign-off-input" name="sign-off" value="" placeholder="Yours now and forever...">
+                    </div>
+                    <h4 class="col-span-3 mt-4 text-lg">Choose a style:</h4>
+                    <button class="bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105" id="professional-email-option">Professional Excuse Email</button>
+                    <button class="bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105" id="nice-email-option">The "Extra Nice"</button>
+                    <button class="bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105" id="snarky-email-option">Make it Snarky!</button>
+                    <button class="col-span-3 bg-gray-300 m-6 mt-2 p-2 border-2 border-black rounded box-shadow text-lg hover:scale-95" id="generate-email-btn">Generate a Top Notch Excuse E-mail!</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="./assets/js/day.js"></script>
+    <script src="./assets/js/email-form.js"></script>
+    <script src="./assets/js/refresh.js"></script>
+    <!-- <script src="./assets/js/day.js"></script>
     <script src="./assets/js/excuse.js"></script>
     <script src="./assets/js/space.js"></script>
     <script src="./assets/js/holiday.js"></script>
     <script src="./assets/js/horoscope-weather.js"></script>
     <script src="./assets/js/inputappear.js"></script>
-    <script src="./assets/js/submit.js"></script>
+    <script src="./assets/js/submit.js"></script> -->
 </body>
 
 
