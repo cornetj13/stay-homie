@@ -3,125 +3,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: pt mono;
 }
-header {
-  background-color: rgb(240, 237, 232);
-  border-color: black;
-  border-style: dashed;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  margin: 10px;
-  margin-right:10px; 
-}
-#logo-card {
-  display:block;
-  float: left;
-  margin-left:5px;
-  width: 30%;
+
+textarea {
+  width: 40rem;
+  height: 30rem;
 }
 
-
-#logo {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 6%;
-  margin-left: 3%;
-
+.results-container h5 {
+  margin-left: 15px;
+  margin-right: 15px;
 }
-
-#app-name-card {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-}
-
-#app-name {
-  display: flex;
-  justify-content: center;
+.fun-font {
   font-family: bangers;
-  font-size: 50px;
-  margin-top: 2%;
 }
 
-#refresh-icon-card {
-  display:block;
-  float:right;
-  margin-right: 5px;
-  width: 30%;
+.box-shadow {
+  box-shadow: 4px 4px 5px;
 }
 
-#refresh-icon  {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 6%;
-  margin-right: 3%;
+.hidden {
+  display: none;
 }
 
-.buttons {
-  border-color: black;
-  border-style: dashed;
-  background-color: aliceblue;
-  /*float: left; */
-  display: inline-block;
-  width: 30%;
-  height: 450px;
-  margin-left: 10px;
-  align-items: center;
+.show {
+  display: block;
 }
 
-#holiday-button {
-  width: 80%;
-  border-width: .5px;
-  border-radius: 10px;
-  align-items: center;
-  margin: 15px;
-  margin-left: 25px;
-  padding: 8px; 
-  box-shadow: 5px 5px;
+.fa-spin-hover:hover {
+  -webkit-animation: fa-spin 2s infinite linear;
+  -moz-animation: fa-spin 2s infinite linear;
+  -o-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
 }
-
-#horoscope-button {
-  width: 80%;
-  border-width: .5px;
-  border-radius: 10px;
-  align-items: center;
-  margin: 15px;
-  margin-left: 25px;
-  padding: 8px; 
-  box-shadow: 5px 5px;
-}
-
-#excuse-button {
-  width: 80%;
-  border-width: .5px;
-  border-radius: 10px;
-  align-items: center;
-  margin: 15px;
-  margin-left: 25px;
-  padding: 8px; 
-  box-shadow: 5px 5px;
-}
-
-#space-button {
-  width: 80%;
-  border-width: .5px;
-  border-radius: 10px;
-  align-items: center;
-  margin: 15px;
-  margin-left: 25px;
-  padding: 8px; 
-  box-shadow: 5px 5px;
-}
-
-#excuse-results {
-  border-color: black;
-  border-style: dashed;
-  background-color: aliceblue;
-  float: right; 
-  width: 68%;
-  height: 450px;
-  margin-right: -5px;
-}
-

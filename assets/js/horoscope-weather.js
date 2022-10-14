@@ -1,22 +1,31 @@
-console.log("hello, stay-homies")
+// console.log("hello, stay-homies")
 
-let sign = prompt("what is your sign")
-let cityName = prompt("what city are you in")
+
+//let cityName = prompt("what city are you in")
 let weatherURL
-let horoscopeButton = document.getElementById("horoscope-button")
+// let buttonHoroscope = document.getElementById("getScope")
 let weatherArray = []
 
+let astroSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces']
 
 async function getHoroscope() {
+    let sign = document.getElementById('astro-sign-input').value;
+    let signLower = sign.toLowerCase()
 
-    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
-    let response = await fetch(URL, {
+    if (astroSigns.includes(signLower)) {
+        console.log(signLower)
+        let URL = `https://aztro.sameerkumar.website/?sign=${signLower}&day=today`;
+        let response = await fetch(URL, {
         method: 'POST'
     })
     let data = await response.json()
 
     return data
-    
+}
+
+else {
+    return undefined
+}
 }
 
 async function loadWeatherData() {
@@ -25,23 +34,24 @@ async function loadWeatherData() {
     return weatherData
 }
 
-async function loadLatLon(place) {
-    var cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${place}&limit=1&appid=41473ca700c922a2192404a846e94a4a`;
+async function loadLatLon() {
+    let cityInput = document.getElementById('location-input').value
+    var cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=1&appid=41473ca700c922a2192404a846e94a4a`;
     var response = await fetch(cordURL);
     var city = await response.json();
     return city
 }
 
 
-async function searchLatLonSearchWeather (place) {
-    
+async function searchLatLonSearchWeather () {
+    let cityInput = document.getElementById('location-input').value
     var weatherArray = []
     // if error log it. if not get coords
     
     let city = [];
     let weather = []
     try {
-        city = await loadLatLon(place)
+        city = await loadLatLon()
     }
     catch (e) {
         console.log("error")
@@ -73,7 +83,7 @@ async function searchLatLonSearchWeather (place) {
 
         weatherArray.push(
             {
-                city: cityName,
+                city: cityInput,
                 latitude: latitude,
                 longitude: longitude,
                 time: `${weather.list[0].dt_txt} GMT`,
@@ -84,28 +94,30 @@ async function searchLatLonSearchWeather (place) {
             })
   
             console.log(weatherArray)
-            return(weatherArray[0].condition.decriptions)
+            console.log(weatherArray[0].condition)
+            console.log(weatherArray[0].condition.description)
+            return(weatherArray[0].condition)
 }
 
 
-horoscopeButton.addEventListener("click", async (e) => {
-    let horo
-    e.preventDefault()
-    try {
-        horo = await getHoroscope()
-    } catch (e) {
-        console.log(e)
-         console.log(error)
-    }
-    try {
-        weatherCondition = await searchLatLonSearchWeather(cityName)
-    } catch {
-        console.log(e)
-        console.log(error)
-    }
-    let horoscope = horo.description + weatherCondition
+// buttonHoroscope.addEventListener("click", async (e) => {
+//     let horo
+//     e.preventDefault()
+//     try {
+//         horo = await getHoroscope()
+//     } catch (e) {
+//         console.log(e)
+//         console.log(error)
+//     }
+//     try {
+//         weatherCondition = await searchLatLonSearchWeather(cityName)
+//     } catch {
+//         console.log(e)
+//         console.log(error)
+//     }
+//     let horoscope = horo.description + weatherCondition
 
-    let horoscopeOnPage = document.getElementById("excuse-results");
-    horoscopeOnPage.innerText = "Not to be dramatic, but my horoscope today read: '" + horoscope + "' Nobody deserves to be around that.";
-})
+//     let horoscopeOnPage = document.getElementById("horoscope")
+//     horoscopeOnPage.innerText = horoscope;
+// })
 

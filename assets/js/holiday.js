@@ -1,10 +1,13 @@
-var APIKey = "0f9da6ac-9370-47e6-8772-f0cc0cb723e7";
+/*  VARIABLES  */
+/* Global Variable */
+var holidayAPIKey = "0f9da6ac-9370-47e6-8772-f0cc0cb723e7";
 var holidayButton = document.getElementById('holiday-button');
 var today = new Date()
 var year = 2021;
 var month = today.getMonth() + 1;
 var day = today.getDate();
-var country = "";
+var country;
+var holidayObjectArray = [];
 var countryArray = [
   {
     countryName: "Australia",
@@ -81,66 +84,54 @@ var countryArray = [
 ];
 var countryArrayTest = [
   {
+    countryName: "UnitedStates",
+    countryCode: "US",
+    ethnicity: "American"
+  },
+  {
     countryName: "China",
-    countryCode: "CN"
+    countryCode: "CN",
+    ethnicity: "Chinese"
   },
   {
     countryName: "France",
-    countryCode: "FR"
+    countryCode: "FR",
+    ethnicity: "French"
   }, 
   {
     countryName: "Japan",
-    countryCode: "JP"
+    countryCode: "JP",
+    ethnicity: "Japanese"
   },
-  {
-    countryName: "UnitedStates",
-    countryCode: "US"
-  }
 ];
 
-console.log(today);
-console.log(year);
-console.log(month);
-console.log(day);
+/*  FUNCTIONS  */
+/* Fetch Holiday API Function - A function for fetching third-party API data about various holidays in different countries and reformatting that data into a useable 'holiday object' array, which is returned.*/
+async function getHoliday() {
+  for (let i = 0; i < countryArrayTest.length; i++) {
+    var countryObject = countryArrayTest[i];
+    var country = countryObject.countryCode;
+    var ethnicity = countryObject.ethnicity;
 
-for (let i = 0; i < countryArrayTest.length; i++) {
-  const countryElement = countryArrayTest[i];
-  // console.log(countryElement);
-  console.log(countryElement.countryName);
-  // console.log(countryElement.countryCode);
+    var holidayAPIUrl = "https://holidayapi.com/v1/holidays?key=" + holidayAPIKey + "&country=" + country + "&year=" + year +"&month="+ month + "&day=" + day;
+  
+    var responseHoliday = await fetch(holidayAPIUrl);
+    var holidayExcuseData = await responseHoliday.json();
 
-  country = countryElement.countryCode;
-  console.log(country);
-  var APIUrl = "https://holidayapi.com/v1/holidays?key=" + APIKey + "&country=" + country + "&year=" + year +"&month="+ month + "&day=" + day;
-  console.log(APIUrl);
+    if(holidayExcuseData.holidays.length !== 0) {
+      var holidayArray = holidayExcuseData.holidays
 
-  // console.log(APIUrl);
-
-  fetch(APIUrl)
-  .then(function (response) {
-    if (response.ok) {
-      // console.log(response);
-      response.json().then(function (data) {
-        // console.log(data);
-        if(data.holidays.length !== 0) {
-          console.log("These are the holidays for " + data.holidays[0].country + ":");
-          console.log(data.holidays);
-          var holidayArray = data.holidays
-
-          for (let j = 0; j < holidayArray.length; j++) {
-            const dataElement = holidayArray[j];
-            console.log(dataElement);
-            console.log(dataElement.name);
-          }
-        }
-        // console.log("Sending holiday data to display data function.")
-        // displayData(data, country);
-      });
-    } else {
-      alert('Error: ' + response.statusText);
+      for (let j = 0; j < holidayArray.length; j++) {
+        var dataElement = holidayArray[j];
+        var holidayObject = {
+          holiday: dataElement.name,
+          country: holidayExcuseData.holidays[0].country,
+          ethnicity: ethnicity,
+        };
+        holidayObjectArray.push(holidayObject);
+      }
     }
-  })
-  .catch(function (error) {
-    alert('Unable to connect to holiday API.');
-  });
+  }
+
+  return holidayObjectArray;
 }
