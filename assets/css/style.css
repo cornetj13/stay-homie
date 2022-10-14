@@ -14,6 +14,10 @@ textarea {
   height: 30rem;
 }
 
+.results-container h5 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .fun-font {
   font-family: bangers;
 }
