@@ -1,16 +1,18 @@
-let copyButton = document.getElementById('copy-button')
+/*  VARIABLES  */
+/* Element Selectors */
+var copyButton = document.getElementById('copy-button');
+var copyTextEl = document.getElementById('email-text');
 
-
+/*  FUNCTIONS  */
+/* Copy Button Function - A function to copy the text to the user's clipboard.*/
 function copyFunction() {
-    let copyText = document.getElementById('email-text').value
-    console.log(copyText)
+    var copyText = copyTextEl.value;
     navigator.clipboard.writeText(copyText).then(() => {
-        document.getElementById('copy-button').innerHTML = 'copied'
-        document.getElementById('copy-button').style.backgroundColor = 'palegreen'
-
+        copyButton.innerHTML = 'copied';
+        copyButton.style.backgroundColor = 'palegreen';
     });
-    
 }
 
-
+/*  MAIN CODE  */
+/* Button Click Event */
 copyButton.addEventListener('click', copyFunction);

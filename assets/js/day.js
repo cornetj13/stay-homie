@@ -1,9 +1,12 @@
-let dateH2 = document.getElementById('date')
+/*  VARIABLES  */
+/* Element Selectors */
+var dateH2 = document.getElementById('date')
 
-let date = new Date().toLocaleDateString()
+/* Global Variable */
+var date = new Date().toLocaleDateString()
 
-// console.log(date)
-
+/*  MAIN CODE  */
+/* Set H2's date */
 dateH2.innerText = date
 
 

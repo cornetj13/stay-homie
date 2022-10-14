@@ -1,14 +1,11 @@
 
-// TODO : hide left-side-panel on submit click
-
+// TODO: hide left-side-panel on submit click?
 
 
 /*  VARIABLES  */
 /* Element Selectors */
 var submitButtonEl = document.getElementById('submit-button');
 var excuseButtonClass = document.getElementsByClassName('on-button');
-
-
 
 /* Global Variables */
 var buttonsArray = [
@@ -23,7 +20,7 @@ var buttonsArray = [
     {
         name: 'excuse',
         onBool: false,
-        fn: getExcuseApi,
+        fn: getExcuse,
         key: 'excuse',
         element: 'excuse-button',
         excuse:[]
@@ -31,7 +28,7 @@ var buttonsArray = [
     {
         name: 'holiday',
         onBool: false,
-        fn: makeHoliday,
+        fn: getHoliday,
         key: 'holiday',
         element: 'holiday-button',
         excuse:[]
@@ -102,11 +99,10 @@ async function handleSubmit(event) {
             console.log(excuseReturn);
             // console.log(excuseReturn[0][useKey])
             console.log(useKey)
-         
 
             //returns excuse for space
             if (buttonsArray[i].name == 'space') {
-               console.log(excuseReturn[0][useKey])
+                console.log(excuseReturn[0][useKey])
                 let spaceExcuseSplit = excuseReturn[0][useKey].split('.')[0]
                 while (spaceExcuseSplit.includes(':')) {
                     spaceExcuseSplit = spaceExcuseSplit.split(/:(.*)/s)[1]
@@ -307,7 +303,6 @@ generateEmailButton.addEventListener('click', function () {
             else {
                 excuseEmail.push(' Smell ya later!')
             }
-   
     }
 
     if (document.getElementById('nice-email-option').classList.contains('bg-green-200')) {
@@ -343,7 +338,6 @@ generateEmailButton.addEventListener('click', function () {
     
 
     console.log(excuseEmail)
- 
     let emailJoined = excuseEmail.join('')
     console.log(emailJoined)
     document.getElementById('email-text').innerText = emailJoined
