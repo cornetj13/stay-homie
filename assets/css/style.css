@@ -9,31 +9,17 @@ body {
   font-family: pt mono;
 }
 
-#app-name {
+textarea {
+  width: 40rem;
+  height: 30rem;
+}
+
+.fun-font {
   font-family: bangers;
 }
 
 .box-shadow {
   box-shadow: 4px 4px 5px;
-}
-
-.background-image {
-  background-image: url('../images/excuses-placeholder-1.png');
-  background-repeat: no-repeat;
-  /* background-size: cover; */
-  background-position: center;
-  position: relative;
-  padding: 10em 0em;
-  overflow: hidden;
-}
-
-.generated-excuse-header,
-.email-buttons-header {
-  font-family: bangers;
-}
-
-#astro-sign-label, #location-label {
-  font-family: bangers
 }
 
 .hidden {
@@ -44,24 +30,9 @@ body {
   display: block;
 }
 
-
 .fa-spin-hover:hover {
   -webkit-animation: fa-spin 2s infinite linear;
   -moz-animation: fa-spin 2s infinite linear;
   -o-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
-}
-
-#date {
-  font-family: bangers;
-}
-
-textarea {
-  width: 40rem;
-  height: 30rem;
-}
-
-
-.fun-font {
-  font-family: bangers;
 }

@@ -21,7 +21,8 @@
             <img src="./assets/images/logo-image.png" alt="The stay homie logo">
         </div>
         <div id="app-name-card">
-            <h2 class="text-7xl" id="app-name">The Stay Homie</i></h2>
+            <h2 class="text-7xl fun-font">The Stay Homie</i></h2>
+            <p>The Ultimate Excuse Generator</p>
         </div>
         <div class="mr-8" id="refresh-btn-card">
             <button class="p-6 border-2 border-black bg-indigo-500 rounded-full hover:scale-110 fa-spin-hover" id="refresh-btn"><i
@@ -33,25 +34,25 @@
     <main class="h-full flex flex-row gap-4 m-4">
 
         <!-- Left-side Panel -->
-        <div
-            class="bg-gradient-to-r from-yellow-400 to-yellow-300 flex flex-col flex-grow basis-1/4 gap-6 border-4 border-black border-dashed text-center">
+        <div id="left-side-panel"
+            class="show bg-gradient-to-r from-yellow-400 to-yellow-300 flex flex-col flex-grow basis-1/4 gap-6 border-4 border-black border-dashed text-center">
 
             <!-- Today's Date -->
-            <h2 class="m-2 p-2 text-4xl" id="date">Today's Date</h2>
+            <h2 class="m-2 p-2 text-4xl fun-font" id="date">Today's Date</h2>
 
             <!-- Excuses Buttons -->
             <button class="on-button bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="weather-button">Is it the weather?</button>
             <button class="on-button bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105"
-                id="holiday-button">Generate a Holiday</button>
+                id="holiday-button">Looking for a holiday?</button>
             <button class="on-button bg-gray-200 m-6 p-2 border-2 border-black rounded box-shadow hover:scale-105"
-                id="horoscope-button">Generate a Horoscope</button>
+                id="horoscope-button">What do the stars say?</button>
             <button class="on-button bg-gray-200 m-6 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="space-button">
-                Generate a Space Event</button>
+                Will an asteroid hit Earth?</button>
             <button
                 class="on-button bg-gray-200 m-6 mb-8 p-2 border-2 border-black rounded box-shadow mb-8 hover:scale-105"
-                id="excuse-button"> Generate a Random Excuse</button>
+                id="excuse-button">I'm feelin' lucky!</button>
 
             <!-- Submit Buttons -->
             <button 
@@ -59,27 +60,24 @@
                 class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black rounded box-shadow hover:scale-105"
                 id="submit-button"
             >
-                Submit
+                Generate Excuses
             </button>
         </div>
 
         <!-- Right-side Panel -->
         <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed">
 
-            <!-- Background Image on Load-->
-            <!-- <div id="procrastinate" class="show background-image"></div> -->
-
             <!-- Excuse Text Box -->
             <div class="hidden" id="excuse-text-box">
                 
-                <h4 class="hidden generated-excuse-header fun-font mt-9 mr-10 text-xl text-center" id="excuse-title">Your Excuses!</h4>
+                <h4 class="hidden fun-font mt-9 mr-10 text-xl text-center" id="excuse-title">Your Excuses!</h4>
                 
                 <div id="excuse-results"
                     class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs overflow-au">
                     
-                    <div class="horoscope-local-input grid grid-cols-2" id="horo-loca-input">
+                    <div class="grid grid-cols-2">
                         <div id="astro-container" class="w-44">
-                            <label id="astro-sign-label" for="astro-sign" class="astro-form hidden fun-font mx-60 mt-12 border-2 w-40 border-black    rounded box-shadow tracking-wider text-center text-lg text-grayscale
+                            <label id="astro-sign-label" for="astro-sign" class="astro-form hidden fun-font mx-60 mt-12 border-2 w-40 border-black rounded box-shadow tracking-wider text-center text-lg text-grayscale
                             bg-gradient-to-r from-blue-500 to-red-500">♈♉♊♋♌♍<br>  Astrological Sign?<br>♎♏♐♑♒♓<br></label>
                         
                             <input type="text" class="astro-form hidden mx-60 mt-2 w-40 h-8 border-2 border-black rounded box-shadow"
@@ -99,7 +97,7 @@
             <!-- Email Info Form -->
             <div class="hidden m-6" id="email-info-form">
                 <h4 class="fun-font mx-40 justify-center text-xl text-center">Too lazy to write your boss? Let us do the hard work for you!</h4>
-                <div id="personal-info-form" class="grid grid-cols-3 bg-gray-100 mt-6 items-baseline border-2 border-black h-96 text-xs text-center">
+                <div id="personal-info-form" class="bg-gradient-to-r from-yellow-400 to-yellow-300 grid grid-cols-3 bg-gray-100 mt-6 items-baseline border-2 border-black h-96 text-xs text-center">
                     <h4 class="col-span-3 mt-2 text-lg">Give us some optional information:</h4>
                     <div id="boss-name" class="bg-gray-200 mx-6 mt-4 p-2 border-2 border-black rounded">
                         <label for="boss-name-input" class="p-4">What do you call your boss?</label>
@@ -130,13 +128,14 @@
                 </div>
             </div>
 
-            <div class="show" id="email-product">
+            <!-- Email Output Form -->
+            <div class="hidden" id="email-product">
                 <div id="excuse-results"
                     class="grid grid-cols-1 gap-0 justify-items-center bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 text-xs overflow-auto h-128">
                     <h2 class="mx-60 mt-10 ps-8 justify-center text-lg fun-font">Your email!</h2>
-                    <textarea type="text" id="email-text" class="mt-4 bg-gray-100 text-md resize-both">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem natus praesentium, quos cupiditate dolores quibusdam commodi corrupti pariatur animi laboriosam. Ad in cumque necessitatibus eligendi. Totam aspernatur a fugiat accusamus.
+                    <textarea type="text" id="email-text" class="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-300 border-4 border-black border-dashed text-md resize-both">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem natus praesentium, quos cupiditate dolores quibusdam commodi corrupti pariatur animi laboriosam. Ad in cumque necessitatibus eligendi. Totam aspernatur a fugiat accusamus.
                     </textarea>
-                    <button type="button" id="copy-button" onclick="copyFunction()"
+                    <button type="button" id="copy-button"
                         class="form-buttons bg-gray-200 m-6 mt-2 p-2 border-2 border-black rounded box-shadow hover:scale-105">
                         Copy to Clipboard
                     </button>
@@ -147,13 +146,13 @@
         </div>
     </main>
 
-    <script src="./assets/js/email-form.js"></script>
     <script src="./assets/js/refresh.js"></script>
     <script src="./assets/js/day.js"></script> 
-    <script src="./assets/js/excuse.js"></script>
-    <script src="./assets/js/space.js"></script>
-    <script src="./assets/js/holiday.js"></script>
     <script src="./assets/js/horoscope-weather.js"></script>
+    <script src="./assets/js/holiday.js"></script>
+    <script src="./assets/js/space.js"></script>
+    <script src="./assets/js/excuse.js"></script>
+    <script src="./assets/js/email-form.js"></script>
     <script src="./assets/js/inputappear.js"></script>
     <script src="./assets/js/copy.js"></script>
     <script src="./assets/js/submit.js"></script>

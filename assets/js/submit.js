@@ -1,3 +1,8 @@
+
+// TODO : hide left-side-panel on submit click
+
+
+
 /*  VARIABLES  */
 /* Element Selectors */
 var submitButtonEl = document.getElementById('submit-button');
@@ -110,7 +115,10 @@ async function handleSubmit(event) {
                 buttonsArray[i].excuse[0] = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`
                 buttonsArray[i].excuse[1] = `I follow space closely, and ${spaceExcuseSplit}. This is a huge step for mankind, and I am respectfully requesting the day off for this event.`
                 buttonsArray[i].excuse[2] = `${spaceExcuseSplit}. I think its obvious why I need the day off.`
-                
+                let spaceP = document.createElement('p');
+                excuseAnswer.append(spaceP);
+                let spaceBr = document.createElement('br');
+                excuseAnswer.appendChild(spaceBr);
             }
             if (buttonsArray[i].name == 'excuse') {
                 console.log(excuseReturn[useKey])
@@ -118,6 +126,10 @@ async function handleSubmit(event) {
                 buttonsArray[i].excuse[0] = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`
                 buttonsArray[i].excuse[1] = `It troubles me to have to announce that ${excuseReturn[0][useKey]} This stressor requires me to take the day off.`
                 buttonsArray[i].excuse[2] = `You know, its crazy cuz ${excuseReturn[0][useKey]} I'm takin off.`
+                let exscuseP = document.createElement('p');
+                excuseAnswer.append(exscuseP);
+                let excuseBr = document.createElement('br');
+                excuseAnswer.appendChild(excuseBr);
             }
             if (buttonsArray[i].name == 'horoscope') {
                 console.log(excuseReturn[useKey])
@@ -125,10 +137,10 @@ async function handleSubmit(event) {
                 buttonsArray[i].excuse[0] = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`
                 buttonsArray[i].excuse[1] = `I was told the future by a respected source: '${excuseReturn[useKey]}' I think this may cause me to harm the company if I come into work today.`
                 buttonsArray[i].excuse[2] = `Check out my horoscope: '${excuseReturn[useKey]}' Isn't that nuts?.`
-                let spaceP = document.createElement('p');
-                excuseAnswer.append(spaceP);
-                let spaceBr = document.createElement('br');
-                excuseAnswer.appendChild(spaceBr);
+                let horoscopeP = document.createElement('p');
+                excuseAnswer.append(horoscopeP);
+                let horoscopeBr = document.createElement('br');
+                excuseAnswer.appendChild(horoscopeBr);
             }
 
             // TODO: Merge These Things
@@ -154,6 +166,10 @@ async function handleSubmit(event) {
                 buttonsArray[i].excuse[0] = `when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather.`
                 buttonsArray[i].excuse[1] = `today's weather report is showing ${excuseReturn[useKey]}. These weather conditions do not contribute to a positive work environment, so unfortunately, I cannot come in today.`
                 buttonsArray[i].excuse[2] = `this ${excuseReturn[useKey]}  I can't possibly come to work in this weather!`
+                // let weatherP = document.createElement('p');
+                // excuseAnswer.append(weatherP);
+                let weatherBr = document.createElement('br');
+                excuseAnswer.appendChild(weatherBr);
             }
             if (buttonsArray[i].name == 'holiday') {
                 console.log(excuseReturn[useKey])
@@ -161,6 +177,10 @@ async function handleSubmit(event) {
                 buttonsArray[i].excuse[0] = `as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}.`
                 buttonsArray[i].excuse[1] = `I am respectfully requesting ${excuseReturn[0][useKey]} off as a ${excuseReturn[0].ethnicity} person.`
                 buttonsArray[i].excuse[2] = `I'm ${excuseReturn[0].ethnicity}. Today is ${excuseReturn[0][useKey]}. I'm gonna party!`
+                let holidayP = document.createElement('p');
+                excuseAnswer.append(holidayP);
+                let holidayBr = document.createElement('br');
+                excuseAnswer.appendChild(holidayBr);
             }
 
 
@@ -168,74 +188,33 @@ async function handleSubmit(event) {
 
             let header = document.getElementById('excuse-results');
             console.log(header)
-            // let backgroundImage = document.getElementById('procrastinate');
-            // console.log(backgroundImage)
-            // backgroundImage.classList.add('hidden')
-            // backgroundImage.classList.remove('show')
+
             header.appendChild(excuseAnswer)
             submitButtonEl.classList.add('hidden');
             console.log(document.getElementById('excuse-title'))
-            if (document.getElementById('excuse-title').classList.contains('hidden'))
-            {
-            document.getElementById('excuse-title').classList.add('show')
-            document.getElementById('excuse-title').classList.remove('hidden')
-            }
-            if (document.getElementById('email-info-form').classList.contains('show')) {
-            document.getElementById('email-info-form').classList.add('show')
-            document.getElementById('email-info-form').classList.remove('hidden')
-            }
+            document.getElementById('excuse-title').classList.add('show');
+            document.getElementById('excuse-title').classList.remove('hidden');
+
+            document.getElementById('excuse-text-box').classList.add('show');
+            document.getElementById('excuse-text-box').classList.remove('hidden');
 
             if(document.getElementById('excuse-text-box').classList.add('show')) {
             document.getElementById('excuse-text-box').classList.add('show')
             document.getElementById('excuse-text-box').classList.remove('hidden')
             }
 
+            document.getElementById('astro-sign-label').classList.remove('show');
+            document.getElementById('astro-sign-label').classList.add('hidden');
+            document.getElementById('astro-sign-input').classList.remove('show');
+            document.getElementById('astro-sign-input').classList.add('hidden');
 
+            document.getElementById('location-label').classList.remove('show');
+            document.getElementById('location-label').classList.add('hidden');
+            document.getElementById('location-input').classList.remove('show');
+            document.getElementById('location-input').classList.add('hidden');
 
-
-            // TODO : merge these conflicts
-        //         excuseAnswer.textContent = `When I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
-        //         let weatherP = document.createElement('p');
-        //         excuseAnswer.append(weatherP);
-        //         let weatherBr = document.createElement('br');
-        //         excuseAnswer.appendChild(weatherBr);
-        //     }
-        //     // if (buttonsArray[i].name == 'holiday') {
-        //     //     console.log(excuseReturn[useKey])
-        //     //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
-        //     // }
-        //     // else if (excuseReturn[0] != null){
-        //     // excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
-        //     // console.log('array')
-        //     // }
-        //     // else {
-        //     // excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
-        //     // console.log('notarry')
-        //     // }
-        //     let header = document.getElementById('excuse-results');
-           
-        //     header.appendChild(excuseAnswer)
-        //     submitButtonEl.classList.add('hidden');
-
-        //     document.getElementById('excuse-title').classList.add('show');
-        //     document.getElementById('excuse-title').classList.remove('hidden');
-
-        //     document.getElementById('excuse-text-box').classList.add('show');
-        //     document.getElementById('excuse-text-box').classList.remove('hidden');
-
-        //     document.getElementById('astro-sign-label').classList.remove('show');
-        //     document.getElementById('astro-sign-label').classList.add('hidden');
-        //     document.getElementById('astro-sign-input').classList.remove('show');
-        //     document.getElementById('astro-sign-input').classList.add('hidden');
-            
-        //     document.getElementById('location-label').classList.remove('show');
-        //     document.getElementById('location-label').classList.add('hidden');
-        //     document.getElementById('location-input').classList.remove('show');
-        //     document.getElementById('location-input').classList.add('hidden');
-          
-
-        //     document.getElementById('email-info-form').classList.add('show');
-        //     document.getElementById('email-info-form').classList.remove('hidden');
+            document.getElementById('email-info-form').classList.add('show');
+            document.getElementById('email-info-form').classList.remove('hidden');
         }
     } 
 }
@@ -261,6 +240,9 @@ submitButtonEl.addEventListener('click', handleSubmit);
 let generateEmailButton = document.getElementById('generate-email-btn')
 
 generateEmailButton.addEventListener('click', function () {
+    let emailDiv = document.getElementById('email-product')
+    emailDiv.classList.remove('hidden')
+    emailDiv.classList.add('show')
     let excuseEmail = []
     let iterateWhenExcuseAdded = 0
     let bossName = document.getElementById('boss-name-input').value
