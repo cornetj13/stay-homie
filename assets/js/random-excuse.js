@@ -1,7 +1,10 @@
-let excuseButton = document.getElementById('excuse-button');
+/*  VARIABLES  */
+/* Element Selectors */
+var excuseButton = document.getElementById('excuse-button');
+
 //async function tells the program to set up the function while everything else is preparing on the page. Async communicates to the program that while everything else is syncronously loading, it may, or will, take more time to retrieve the information it needs to load (await) ***FETCHES ARE ALWAYS ASYNCRONOUS 
 //we have created an async function called getExcuseApi()
-async function getExcuseApi(){
+async function getExcuse(){
     //here we are creating a variable to store the api url
     console.log('excuse')
     let queryURL = "https://excuser.herokuapp.com/v1/excuse/office";

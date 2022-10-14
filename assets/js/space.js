@@ -1,33 +1,12 @@
-
+/*  VARIABLES  */
+/* Element Selectors */
 var spaceButton = document.getElementById('space-button');
 
-
-console.log("This should fire on load 2");
+/*  FUNCTIONS  */
+/* Fetch Space API Function - A function for fetching third-party API data about space news and return the json data.*/
 async function getSpaceApi() {
-
-
-    
-    var queryURL = "https://api.spaceflightnewsapi.net/v3/reports";
-
-    let response = await fetch(queryURL);
-
-    let excuse = await response.json();
-
-    return excuse
+    var spaceAPIUrl = "https://api.spaceflightnewsapi.net/v3/reports";
+    var responseSpace = await fetch(spaceAPIUrl);
+    var spaceNewsExcuse = await responseSpace.json();
+    return spaceNewsExcuse
 }
-
-// spaceButton.addEventListener('click', async (event) => {
-//     let excuseReturn;
-
-//     try {
-//         excuseReturn = await getSpaceApi();
-//     }
-//     catch {
-//         console.log(error);
-//     }
-//     console.log(excuseReturn[0].summary);
-//     var spaceAnswer = document.createElement("h5");
-//     spaceAnswer.textContent = "Plus in other important happenings " + excuseReturn[0].summary + "...and that's pretty serious!";
-//     let header = document.getElementById('excuse');
-//     header.appendChild(spaceAnswer);
-// });
