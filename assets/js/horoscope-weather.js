@@ -30,7 +30,7 @@ async function loadWeatherData() {
 }
 
 async function loadLatLon() {
-    let cityInput = document.getElementById('city').value
+    let cityInput = document.getElementById('location-input').value
     var cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=1&appid=41473ca700c922a2192404a846e94a4a`;
     var response = await fetch(cordURL);
     var city = await response.json();

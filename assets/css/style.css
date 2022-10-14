@@ -27,7 +27,8 @@ body {
   overflow: hidden;
 }
 
-.fun-font {
+.generated-excuse-header,
+.email-buttons-header {
   font-family: bangers;
 }
 
@@ -52,5 +53,15 @@ body {
 }
 
 #date {
+  font-family: bangers;
+}
+
+textarea {
+  width: 40rem;
+  height: 30rem;
+}
+
+
+.fun-font {
   font-family: bangers;
 }

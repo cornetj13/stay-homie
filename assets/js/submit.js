@@ -12,36 +12,40 @@ var buttonsArray = [
         onBool: false,
         fn: getSpaceApi,
         key: 'summary',
-        element: 'space-button'
+        element: 'space-button',
+        excuse:[]
     },
     {
         name: 'excuse',
         onBool: false,
         fn: getExcuseApi,
         key: 'excuse',
-        element: 'excuse-button'
+        element: 'excuse-button',
+        excuse:[]
     },
     {
         name: 'holiday',
         onBool: false,
         fn: makeHoliday,
-        key: 'holidays',
-        element: 'holiday-button'
+        key: 'holiday',
+        element: 'holiday-button',
+        excuse:[]
     },
     {
         name: 'horoscope',
-        oneBool: false,
+        onBool: false,
         fn: getHoroscope,
         key: 'description',
-        element: 'horoscope-button'
+        element: 'horoscope-button',
+        excuse:[]
     },
     {
         name: 'weather',
-        oneBool: false,
+        onBool: false,
         fn: searchLatLonSearchWeather,
         key: 'description',
-        element: 'weather-button'
-
+        element: 'weather-button',
+        excuse:[]
     }
 ];
 
@@ -93,81 +97,145 @@ async function handleSubmit(event) {
             console.log(excuseReturn);
             // console.log(excuseReturn[0][useKey])
             console.log(useKey)
-            console.log(excuseReturn.description)
-            console.log(excuseReturn.useKey)
+         
 
             //returns excuse for space
             if (buttonsArray[i].name == 'space') {
+               console.log(excuseReturn[0][useKey])
                 let spaceExcuseSplit = excuseReturn[0][useKey].split('.')[0]
                 while (spaceExcuseSplit.includes(':')) {
                     spaceExcuseSplit = spaceExcuseSplit.split(/:(.*)/s)[1]
                 }
                 excuseAnswer.textContent = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`
+                buttonsArray[i].excuse[0] = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`
+                buttonsArray[i].excuse[1] = `I follow space closely, and ${spaceExcuseSplit}. This is a huge step for mankind, and I am respectfully requesting the day off for this event.`
+                buttonsArray[i].excuse[2] = `${spaceExcuseSplit}. I think its obvious why I need the day off.`
+                
+            }
+            if (buttonsArray[i].name == 'excuse') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`
+                buttonsArray[i].excuse[0] = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`
+                buttonsArray[i].excuse[1] = `It troubles me to have to announce that ${excuseReturn[0][useKey]} This stressor requires me to take the day off.`
+                buttonsArray[i].excuse[2] = `You know, its crazy cuz ${excuseReturn[0][useKey]} I'm takin off.`
+            }
+            if (buttonsArray[i].name == 'horoscope') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`
+                buttonsArray[i].excuse[0] = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`
+                buttonsArray[i].excuse[1] = `I was told the future by a respected source: '${excuseReturn[useKey]}' I think this may cause me to harm the company if I come into work today.`
+                buttonsArray[i].excuse[2] = `Check out my horoscope: '${excuseReturn[useKey]}' Isn't that nuts?.`
                 let spaceP = document.createElement('p');
                 excuseAnswer.append(spaceP);
                 let spaceBr = document.createElement('br');
                 excuseAnswer.appendChild(spaceBr);
             }
-            if (buttonsArray[i].name == 'excuse') {
-                console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]}. I need the day off.`
-                let exscuseP = document.createElement('p');
-                excuseAnswer.append(exscuseP);
-                let excuseBr = document.createElement('br');
-                excuseAnswer.appendChild(excuseBr);
-            }
-            if (buttonsArray[i].name == 'horoscope') {
-                console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said that ${excuseReturn[useKey]} I'm taking this to heart, and need your support.`
-                let horoP = document.createElement('p');
-                excuseAnswer.append(horoP);
-                let horoBr = document.createElement('br');
-                excuseAnswer.appendChild(horoBr);
-            }
-            if (buttonsArray[i].name == 'weather') {
-                console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `When I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
-                let weatherP = document.createElement('p');
-                excuseAnswer.append(weatherP);
-                let weatherBr = document.createElement('br');
-                excuseAnswer.appendChild(weatherBr);
-            }
-            // if (buttonsArray[i].name == 'holiday') {
+
+            // TODO: Merge These Things
+            // if (buttonsArray[i].name == 'excuse') {
             //     console.log(excuseReturn[useKey])
-            //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
+            //     excuseAnswer.textContent = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]}. I need the day off.`
+            //     let exscuseP = document.createElement('p');
+            //     excuseAnswer.append(exscuseP);
+            //     let excuseBr = document.createElement('br');
+            //     excuseAnswer.appendChild(excuseBr);
             // }
-            // else if (excuseReturn[0] != null){
-            // excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
-            // console.log('array')
+            // if (buttonsArray[i].name == 'horoscope') {
+            //     console.log(excuseReturn[useKey])
+            //     excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said that ${excuseReturn[useKey]} I'm taking this to heart, and need your support.`
+            //     let horoP = document.createElement('p');
+            //     excuseAnswer.append(horoP);
+            //     let horoBr = document.createElement('br');
+            //     excuseAnswer.appendChild(horoBr);
             // }
-            // else {
-            // excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
-            // console.log('notarry')
-            // }
+            if (buttonsArray[i].name === 'weather') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
+                buttonsArray[i].excuse[0] = `when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather.`
+                buttonsArray[i].excuse[1] = `today's weather report is showing ${excuseReturn[useKey]}. These weather conditions do not contribute to a positive work environment, so unfortunately, I cannot come in today.`
+                buttonsArray[i].excuse[2] = `this ${excuseReturn[useKey]}  I can't possibly come to work in this weather!`
+            }
+            if (buttonsArray[i].name == 'holiday') {
+                console.log(excuseReturn[useKey])
+                excuseAnswer.textContent = `as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}!`
+                buttonsArray[i].excuse[0] = `as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}.`
+                buttonsArray[i].excuse[1] = `I am respectfully requesting ${excuseReturn[0][useKey]} off as a ${excuseReturn[0].ethnicity} person.`
+                buttonsArray[i].excuse[2] = `I'm ${excuseReturn[0].ethnicity}. Today is ${excuseReturn[0][useKey]}. I'm gonna party!`
+            }
+
+
+            console.log(buttonsArray[i].excuse)
+
             let header = document.getElementById('excuse-results');
-           
+            console.log(header)
+            // let backgroundImage = document.getElementById('procrastinate');
+            // console.log(backgroundImage)
+            // backgroundImage.classList.add('hidden')
+            // backgroundImage.classList.remove('show')
             header.appendChild(excuseAnswer)
             submitButtonEl.classList.add('hidden');
+            console.log(document.getElementById('excuse-title'))
+            if (document.getElementById('excuse-title').classList.contains('hidden'))
+            {
+            document.getElementById('excuse-title').classList.add('show')
+            document.getElementById('excuse-title').classList.remove('hidden')
+            }
+            if (document.getElementById('email-info-form').classList.contains('show')) {
+            document.getElementById('email-info-form').classList.add('show')
+            document.getElementById('email-info-form').classList.remove('hidden')
+            }
 
-            document.getElementById('excuse-title').classList.add('show');
-            document.getElementById('excuse-title').classList.remove('hidden');
+            if(document.getElementById('excuse-text-box').classList.add('show')) {
+            document.getElementById('excuse-text-box').classList.add('show')
+            document.getElementById('excuse-text-box').classList.remove('hidden')
+            }
 
-            document.getElementById('excuse-text-box').classList.add('show');
-            document.getElementById('excuse-text-box').classList.remove('hidden');
 
-            document.getElementById('astro-sign-label').classList.remove('show');
-            document.getElementById('astro-sign-label').classList.add('hidden');
-            document.getElementById('astro-sign-input').classList.remove('show');
-            document.getElementById('astro-sign-input').classList.add('hidden');
+
+
+            // TODO : merge these conflicts
+        //         excuseAnswer.textContent = `When I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`
+        //         let weatherP = document.createElement('p');
+        //         excuseAnswer.append(weatherP);
+        //         let weatherBr = document.createElement('br');
+        //         excuseAnswer.appendChild(weatherBr);
+        //     }
+        //     // if (buttonsArray[i].name == 'holiday') {
+        //     //     console.log(excuseReturn[useKey])
+        //     //     excuseAnswer.textContent = `something in here will take data concerning an ethnicity, but ${excuseReturn[0][useKey]}. I need the day off.`
+        //     // }
+        //     // else if (excuseReturn[0] != null){
+        //     // excuseAnswer.textContent = "But even more than that " + excuseReturn[0][useKey] + ", can you believe it?";
+        //     // console.log('array')
+        //     // }
+        //     // else {
+        //     // excuseAnswer.textContent = `But even more than that, my horoscope said '` + excuseReturn[useKey] + `', can you believe it?`;
+        //     // console.log('notarry')
+        //     // }
+        //     let header = document.getElementById('excuse-results');
+           
+        //     header.appendChild(excuseAnswer)
+        //     submitButtonEl.classList.add('hidden');
+
+        //     document.getElementById('excuse-title').classList.add('show');
+        //     document.getElementById('excuse-title').classList.remove('hidden');
+
+        //     document.getElementById('excuse-text-box').classList.add('show');
+        //     document.getElementById('excuse-text-box').classList.remove('hidden');
+
+        //     document.getElementById('astro-sign-label').classList.remove('show');
+        //     document.getElementById('astro-sign-label').classList.add('hidden');
+        //     document.getElementById('astro-sign-input').classList.remove('show');
+        //     document.getElementById('astro-sign-input').classList.add('hidden');
             
-            document.getElementById('location-label').classList.remove('show');
-            document.getElementById('location-label').classList.add('hidden');
-            document.getElementById('location-input').classList.remove('show');
-            document.getElementById('location-input').classList.add('hidden');
+        //     document.getElementById('location-label').classList.remove('show');
+        //     document.getElementById('location-label').classList.add('hidden');
+        //     document.getElementById('location-input').classList.remove('show');
+        //     document.getElementById('location-input').classList.add('hidden');
           
 
-            document.getElementById('email-info-form').classList.add('show');
-            document.getElementById('email-info-form').classList.remove('hidden');
+        //     document.getElementById('email-info-form').classList.add('show');
+        //     document.getElementById('email-info-form').classList.remove('hidden');
         }
     } 
 }
@@ -183,3 +251,113 @@ for (i = 0; i < excuseButtonClass.length; i++) {
 
 /* Submit Click Event */
 submitButtonEl.addEventListener('click', handleSubmit);
+
+
+// let excuseEmail = [buttonsArray[0].excuse, buttonsArray[1].excuse, buttonsArray[2].excuse, buttonsArray[3].excuse, buttonsArray[4].excuse]
+
+
+// console.log(excuseEmail)
+
+let generateEmailButton = document.getElementById('generate-email-btn')
+
+generateEmailButton.addEventListener('click', function () {
+    let excuseEmail = []
+    let iterateWhenExcuseAdded = 0
+    let bossName = document.getElementById('boss-name-input').value
+    let signOff = document.getElementById('sign-off-input').value
+    if (document.getElementById('professional-email-option').classList.contains('bg-green-200')) {
+    
+        if (bossName !== '') {
+            excuseEmail.push(`Dear ${bossName}, `)
+        }   else {
+            excuseEmail.push('To whom it may concern. ')
+        }
+
+        for (i=0; i < buttonsArray.length; i++) {
+            
+            if (iterateWhenExcuseAdded != 0) {
+                excuseEmail.push(' Also ')
+                iterateWhenExcuseAdded --
+            }
+            if (buttonsArray[i].excuse != undefined){
+                excuseEmail.push(buttonsArray[i].excuse[0])
+                iterateWhenExcuseAdded ++
+            }
+        }
+        
+        if (signOff !== '') {
+        excuseEmail.push(` ${signOff}`)
+        } 
+        else {
+            excuseEmail.push(' Thank you for your consideration')
+        }
+    }
+
+    if (document.getElementById('snarky-email-option').classList.contains('bg-green-200')) {
+    
+        if (bossName !== '') {
+            excuseEmail.push(`What's up, ${bossName}. `)
+        }   else {
+            excuseEmail.push("What's up,")
+        }
+
+        for (i=0; i < buttonsArray.length; i++) {
+            
+            if (iterateWhenExcuseAdded != 0) {
+                excuseEmail.push(' Also ')
+                iterateWhenExcuseAdded --
+            }
+            if (buttonsArray[i].excuse != undefined){
+                excuseEmail.push(buttonsArray[i].excuse[2])
+                iterateWhenExcuseAdded ++
+            }
+        }
+        if (signOff !== '') {
+            excuseEmail.push(` ${signOff}`)
+            } 
+            else {
+                excuseEmail.push(' Smell ya later!')
+            }
+   
+    }
+
+    if (document.getElementById('nice-email-option').classList.contains('bg-green-200')) {
+    
+        if (bossName !== '') {
+            excuseEmail.push(`Dear ${bossName}, `)
+        }   else {
+            excuseEmail.push('To whom it may concern. ')
+        }
+
+        for (i=0; i < buttonsArray.length; i++) {
+            
+            if (iterateWhenExcuseAdded != 0) {
+                excuseEmail.push(' Also ')
+                iterateWhenExcuseAdded --
+            }
+            if (buttonsArray[i].excuse != undefined){
+                excuseEmail.push(buttonsArray[i].excuse[1])
+                iterateWhenExcuseAdded ++
+            }
+        }
+        if (signOff !== '') {
+            excuseEmail.push(` ${signOff}`)
+            } 
+        else {
+            excuseEmail.push(' Thank you for your consideration')
+        }
+    }
+    
+
+    console.log(excuseEmail)
+ 
+    let emailJoined = excuseEmail.join('')
+    console.log(emailJoined)
+    document.getElementById('email-text').innerText = emailJoined
+    excuseTextBox.classList.add('hidden');
+    excuseTextBox.classList.remove('show');
+    emailInfoForm.classList.add('hidden');
+    emailInfoForm.classList.remove('show');
+})
+
+

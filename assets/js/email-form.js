@@ -66,4 +66,4 @@ console.log(optionBtnIDArray);
 professionalOptionBtn.addEventListener('click', selectButton);
 niceOptionBtn.addEventListener('click', selectButton);
 snarkyOptionBtn.addEventListener('click', selectButton);
-generateEmailBtn.addEventListener('click', submitForm);
+// generateEmailBtn.addEventListener('click', submitForm);

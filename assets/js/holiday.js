@@ -161,7 +161,7 @@ async function makeHoliday() {
 
   console.log("This is the holiday object array:");
   console.log(holidayObjectArray);
-  return null;
+  return holidayObjectArray;
 }
 
 
