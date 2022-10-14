@@ -9,7 +9,7 @@ let weathButton = document.getElementById('weather-button');
 
 horoButton.addEventListener('click', function () {
     let horoInput = document.getElementsByClassName('astro-form');
-    let textBox = document.getElementById('excuse-text-box')
+    let textBox = document.getElementById('excuse-text-box');
     //console.log(horoInput)
         textBox.classList.remove('hidden');
         textBox.classList.add('show');
@@ -31,7 +31,7 @@ horoButton.addEventListener('click', function () {
 
 weathButton.addEventListener('click', function () {
     let weathInput = document.getElementsByClassName('weather-info');
-    let textBox = document.getElementById('excuse-text-box')
+    let textBox = document.getElementById('excuse-text-box');
     //console.log(horoInput)
     if (textBox.classList.contains('hidden')) {
         textBox.classList.remove('hidden');

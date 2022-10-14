@@ -31,7 +31,7 @@ body {
   font-family: bangers;
 }
 
-#astro-sign-label {
+#astro-sign-label, #location-label {
   font-family: bangers
 }
 
