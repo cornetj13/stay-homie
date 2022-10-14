@@ -27,12 +27,8 @@ body {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 .generated-excuse-header,
 .email-buttons-header {
-=======
-.fun-font {
->>>>>>> dev
   font-family: bangers;
 }
 
@@ -57,6 +53,11 @@ body {
 }
 
 textarea {
-  width: 50rem;
-  height: 20rem;
+  width: 40rem;
+  height: 30rem;
+}
+
+
+.fun-font {
+  font-family: bangers;
 }
