@@ -32,6 +32,10 @@ body {
   font-family: bangers;
 }
 
+#astro-sign-label, #location-label {
+  font-family: bangers
+}
+
 .hidden {
   display: none;
 }

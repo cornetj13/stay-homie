@@ -16,7 +16,7 @@
 
 <body>
     <!-- Header -->
-    <header class="bg-gray-200 border-4 border-black border-dashed flex flex-row justify-between items-center p-6">
+    <header class="bg-gray-200 border-4 border-black border-dashed flex flex-row justify-between items-center mt-6 mx-4 p-6">
         <div class="ml-8" id="logo-card">
             <img src="./assets/images/logo-image.png" alt="The stay homie logo">
         </div>
@@ -24,7 +24,7 @@
             <h2 class="text-7xl" id="app-name">The Stay Homie</i></h2>
         </div>
         <div class="mr-8" id="refresh-btn-card">
-            <button class="p-6 border-2 border-black rounded-full hover:scale-110 fa-spin-hover" id="refresh-btn"><i
+            <button class="p-6 border-2 border-black bg-indigo-500 rounded-full hover:scale-110 fa-spin-hover" id="refresh-btn"><i
                     class="fa-solid fa-rotate fa-xl"></i></button>
         </div>
     </header>
@@ -54,9 +54,11 @@
                 id="excuse-button"> Generate a Random Excuse</button>
 
             <!-- Submit Buttons -->
-            <button type="button"
-                class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black box-shadow hover:scale-105"
-                id="submit-button">
+            <button 
+                type="button"
+                class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black rounded box-shadow hover:scale-105"
+                id="submit-button"
+            >
                 Submit
             </button>
         </div>
@@ -68,27 +70,36 @@
             <!-- <div id="procrastinate" class="show background-image"></div> -->
 
             <!-- Excuse Text Box -->
-            <div class="show" id="excuse-text-box">
-                <h4 class="hidden fun-font mx-80 mt-9 pl-24 text-lg" id="excuse-title">Your Excuses:</h4>
+            <div class="hidden" id="excuse-text-box">
+                
+                <h4 class="hidden generated-excuse-header fun-font mt-9 mr-10 text-xl text-center" id="excuse-title">Your Excuses!</h4>
+                
                 <div id="excuse-results"
-                    class="bg-gray-100 flex-grow mx-11 mt-9 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
-                    <div class="horoscope-local-input ">
-                        <label for="astro-sign" class="hidden astro-form">Astrological Sign:</label>
-                        <input type="text" class="hidden astro-form border-2 border-black items-center"
+                    class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs overflow-au">
+                    
+                    <div class="horoscope-local-input grid grid-cols-2" id="horo-loca-input">
+                        <div id="astro-container" class="w-44">
+                            <label id="astro-sign-label" for="astro-sign" class="astro-form hidden fun-font mx-60 mt-12 border-2 w-40 border-black    rounded box-shadow tracking-wider text-center text-lg text-grayscale
+                            bg-gradient-to-r from-blue-500 to-red-500">♈♉♊♋♌♍<br>  Astrological Sign?<br>♎♏♐♑♒♓<br></label>
+                        
+                            <input type="text" class="astro-form hidden mx-60 mt-2 w-40 h-8 border-2 border-black rounded box-shadow"
                             id="astro-sign-input" name="astro-sign" value=""><br><br>
-                        <label for="location" class="hidden weather-info">Current Location:</label>
-                        <input type="text" class="hidden weather-info border-2 border-black items-center"
+                        </div>
+                        <div id="location-container" class="w-44 ">
+                            <label id="location-label" for="location" class="weather-info hidden fun-font mx-6 mt-12 w-40 border-2 border-black rounded box-shadow tracking-wider text-center text-lg 
+                            bg-gradient-to-r from-green-500 to-yellow-300">  🌎🏙🌎🏙🌎🏙<br>  Current Location: <br>  🏙🌎🏙🌎🏙🌎<br></label>
+                        
+                            <input type="text" class="weather-info hidden mx-6 mt-2 h-8 w-40 border-2 border-black border-2 border-black rounded box-shadow"
                             id="location-input" name="location" value=""><br><br>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Email Info Form -->
-            <div class="show m-6" id="email-info-form">
-                <h4 class="fun-font mx-40 justify-center text-lg text-center">Too lazy to write your boss? Let us do the
-                    hard work for you!</h4>
-                <div id="personal-info-form"
-                    class="grid grid-cols-3 bg-gray-100 mt-6 items-baseline border-2 border-black h-96 text-xs text-center">
+            <div class="hidden m-6" id="email-info-form">
+                <h4 class="fun-font mx-40 justify-center text-xl text-center">Too lazy to write your boss? Let us do the hard work for you!</h4>
+                <div id="personal-info-form" class="grid grid-cols-3 bg-gray-100 mt-6 items-baseline border-2 border-black h-96 text-xs text-center">
                     <h4 class="col-span-3 mt-2 text-lg">Give us some optional information:</h4>
                     <div id="boss-name" class="bg-gray-200 mx-6 mt-4 p-2 border-2 border-black rounded">
                         <label for="boss-name-input" class="p-4">What do you call your boss?</label>
@@ -138,7 +149,7 @@
 
     <script src="./assets/js/email-form.js"></script>
     <script src="./assets/js/refresh.js"></script>
-    <script src="./assets/js/day.js"></script>
+    <script src="./assets/js/day.js"></script> 
     <script src="./assets/js/excuse.js"></script>
     <script src="./assets/js/space.js"></script>
     <script src="./assets/js/holiday.js"></script>
