@@ -2,7 +2,7 @@
 /* Global Variable */
 var holidayAPIKey = "0f9da6ac-9370-47e6-8772-f0cc0cb723e7";
 var holidayButton = document.getElementById('holiday-button');
-var today = new Date()
+var today = new Date();
 var year = 2021;
 var month = today.getMonth() + 1;
 var day = today.getDate();
@@ -106,7 +106,7 @@ var countryArrayTest = [
 ];
 
 /*  FUNCTIONS  */
-/* Fetch Holiday API Function - A function for fetching third-party API data about various holidays in different countries and reformatting that data into a useable 'holiday object' array, which is returned.*/
+/* Fetch Holiday API Function - A function for fetching third-party API data about various holidays in different countries and reformatting that data into a useable 'holiday object' array, which is returned. */
 async function getHoliday() {
   for (let i = 0; i < countryArrayTest.length; i++) {
     var countryObject = countryArrayTest[i];
@@ -134,4 +134,4 @@ async function getHoliday() {
   }
 
   return holidayObjectArray;
-}
+};

@@ -34,6 +34,10 @@ textarea {
   display: block;
 }
 
+.btn-red {
+  background-color: rgb(218, 43, 43);
+}
+
 .fa-spin-hover:hover {
   -webkit-animation: fa-spin 2s infinite linear;
   -moz-animation: fa-spin 2s infinite linear;
