@@ -7,6 +7,7 @@
 var submitButtonEl = document.getElementById('submit-button');
 var excuseButtonClass = document.getElementsByClassName('on-button');
 
+
 /* Global Variables */
 var buttonsArray = [
     {
@@ -191,6 +192,10 @@ async function handleSubmit(event) {
             document.getElementById('excuse-title').classList.add('show');
             document.getElementById('excuse-title').classList.remove('hidden');
 
+            document.getElementById('background-image').classList.add('hidden');
+            document.getElementById('background-image').classList.remove('show');
+            
+    
             document.getElementById('excuse-text-box').classList.add('show');
             document.getElementById('excuse-text-box').classList.remove('hidden');
 
