@@ -9,18 +9,14 @@ var professionalOptionBtn   = document.getElementById("professional-email-option
 var niceOptionBtn           = document.getElementById("nice-email-option");
 var snarkyOptionBtn         = document.getElementById("snarky-email-option");
 var generateEmailBtn        = document.getElementById("generate-email-btn");
+
+/* Global Variables */
 var optionBtnIDArray = ["professional-email-option", "nice-email-option", "snarky-email-option"];
 
 /*  FUNCTIONS  */
-/* Select Option Function */
+/* Select Option Function - a function for selecting the type of email that will be sent from three distinct options. */
 function selectButton(event) {
-  console.log("You clicked an option.");
-
   var selectedBtnID = event.target.getAttribute('id');
-  console.log(selectedBtnID);
-
-  var selectedBtn = document.getElementById(selectedBtnID);
-  console.log(selectedBtn);
 
   for (let i = 0; i < optionBtnIDArray.length; i++) {
     var optionBtnID = optionBtnIDArray[i];
@@ -31,39 +27,21 @@ function selectButton(event) {
     } else {
       optionBtn.classList.add('bg-gray-200');
       optionBtn.classList.remove('bg-green-200');
-    }
-  }
-}
+    };
+  };
+};
 
-/* Submit Form Function */
+/* Submit Form Function - a function for displaying the generated email after the email form is filled out. */
 function submitForm() {
-  console.log("You clicked generate an email.");
-  excuseTextBox.classList.add('hidden');
   excuseTextBox.classList.remove('show');
-  emailInfoForm.classList.add('hidden');
+  excuseTextBox.classList.add('hidden');
   emailInfoForm.classList.remove('show');
-}
+  emailInfoForm.classList.add('hidden');
+};
 
 /*  MAIN CODE  */
-
-/* TODO: Delete testing at end. */
-/* Testing */
-console.log("email-form script is live");
-// console.log(bossNameInput);
-// console.log(bossNameInput.value);
-// console.log(professionalTitleInput);
-// console.log(professionalTitleInput.value);
-// console.log(signOffInput);
-// console.log(signOffInput.value);
-console.log(professionalOptionBtn);
-console.log(niceOptionBtn);
-console.log(snarkyOptionBtn);
-// console.log(generateEmailBtn);
-console.log(optionBtnIDArray);
-/* TODO: End testing area (to be deleted) */
-
 /* Button Click Events */
 professionalOptionBtn.addEventListener('click', selectButton);
 niceOptionBtn.addEventListener('click', selectButton);
 snarkyOptionBtn.addEventListener('click', selectButton);
-// generateEmailBtn.addEventListener('click', submitForm);
+generateEmailBtn.addEventListener('click', submitForm);
