@@ -17,8 +17,8 @@
 <body>
     <!-- Header -->
     <header class="bg-gray-200 border-4 border-black border-dashed flex flex-row justify-between items-center mt-6 mx-4 p-6">
-        <div class="ml-8" id="logo-card">
-            <img src="./assets/images/logo-image.png" alt="The stay homie logo">
+        <div class="ml-8 w-36" id="logo-card">
+            <img src="./assets/images/sh_logo.PNG" alt="The stay homie logo">
         </div>
         <div id="app-name-card">
             <h2 class="text-7xl fun-font">The Stay Homie</i></h2>
@@ -52,19 +52,21 @@
         </div>
 
         <!-- Right-side Panel -->
-        <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed">
+        <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed relative -z-20">
 
+            <img src="./assets/images/sh_background.png" class="show flex overflow-hidden p-12 w-7/12 mx-52 my-16 absolute -z-10" id="background-image">
+        
             <!-- Excuse Text Box -->
-            <div class="hidden" id="excuse-text-box">
+            <div class="hidden" id="excuse-text-box"> 
                 
                 <h4 class="hidden fun-font mt-9 mr-10 text-xl text-center" id="excuse-title">Your Excuses!</h4>
                 
                 <div id="excuse-results"
-                    class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs overflow-au">
+                    class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
 
                     <h5 id="excuse-text"></h5>
 
-                    <div class="flex justify-around">
+                    <div class="flex justify-around z-10">
                         <div id="astro-container" class="hidden fun-font w-44 mt-12 border-2 border-black rounded box-shadow tracking-wider text-center text-lg bg-gradient-to-r from-blue-500 to-red-500">
                             <label id="astro-sign-label" for="astro-sign" class="">♈♉♊♋♌♍<br>Astrological Sign?<br>♎♏♐♑♒♓<br></label>
                             <input type="text" class="mt-2 h-8 w-32 border-2 border-black rounded box-shadow"

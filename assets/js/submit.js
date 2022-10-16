@@ -4,6 +4,7 @@ var excuseButtonClass   = document.getElementsByClassName('on-button');
 var submitExcuseButton  = document.getElementById('submit-button');
 var generateEmailButton = document.getElementById('generate-email-btn');
 
+
 /* Global Variables */
 var buttonsArray = [
     {
@@ -164,6 +165,10 @@ async function submitExcuseInput(event) {
             document.getElementById('excuse-title').classList.add('show');
             document.getElementById('excuse-title').classList.remove('hidden');
 
+            document.getElementById('background-image').classList.add('hidden');
+            document.getElementById('background-image').classList.remove('show');
+            
+    
             document.getElementById('excuse-text-box').classList.add('show');
             document.getElementById('excuse-text-box').classList.remove('hidden');
 

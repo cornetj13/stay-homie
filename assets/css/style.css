@@ -14,6 +14,7 @@ textarea {
   height: 30rem;
 }
 
+
 .results-container h5 {
   margin-left: 15px;
   margin-right: 15px;
@@ -44,3 +45,6 @@ textarea {
   -o-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
+
+
+  
