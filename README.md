@@ -3,7 +3,9 @@ A responsive, interactive application that allows users to generate excuses to s
 
 ## User Story
 As a burnt out cog in this wheel of capitalism
+
 I want to generate excuses 
+
 So that I can get out of a work day without thinking
 
 ## Description
