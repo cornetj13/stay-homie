@@ -1,11 +1,12 @@
-/*  VARIABLES  */
+/*  varIABLES  */
 /* Element Selectors */
+var excuseArray = []
 var excuseButtonClass   = document.getElementsByClassName('on-button');
 var submitExcuseButton  = document.getElementById('submit-button');
 var generateEmailButton = document.getElementById('generate-email-btn');
 
 
-/* Global Variables */
+/* Global variables */
 var buttonsArray = [
     {
         name: 'space',
@@ -24,14 +25,6 @@ var buttonsArray = [
         excuse:[]
     },
     {
-        name: 'holiday',
-        onBool: false,
-        fn: getHoliday,
-        key: 'holiday',
-        element: 'holiday-button',
-        excuse:[]
-    },
-    {
         name: 'horoscope',
         onBool: false,
         fn: getHoroscope,
@@ -46,15 +39,23 @@ var buttonsArray = [
         key: 'description',
         element: 'weather-button',
         excuse:[]
+    },
+    {
+        name: 'holiday',
+        onBool: false,
+        fn: getHoliday,
+        key: 'holiday',
+        element: 'holiday-button',
+        excuse:[]
     }
 ];
 
 /*  FUNCTIONS  */
 /* Call Excuse Function */
-let callExcuseFunction = async (i)  => {
+var callExcuseFunction = async (i)  => {
     try {
         console.log("This is entering callExcuseFunction: ");
-        let excuseReturn = await buttonsArray[i].fn();
+        var excuseReturn = await buttonsArray[i].fn();
         console.log("This is from callExcuseFunction: ");
         console.log(excuseReturn);
         return excuseReturn
@@ -100,58 +101,64 @@ async function submitExcuseInput(event) {
                 while (spaceExcuseSplit.includes(':')) {
                     spaceExcuseSplit = spaceExcuseSplit.split(/:(.*)/s)[1];
                 };
-                excuseAnswer.textContent = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`;
+                excuseArray.push(`I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`);
                 buttonsArray[i].excuse[0] = `I wanted to come into work, but ${spaceExcuseSplit}, and I just couldn't handle it.`;
                 buttonsArray[i].excuse[1] = `I follow space closely, and ${spaceExcuseSplit}. This is a huge step for mankind, and I am respectfully requesting the day off for this event.`;
                 buttonsArray[i].excuse[2] = `${spaceExcuseSplit}. I think its obvious why I need the day off.`;
-                var spaceP = document.createElement('p');
-                excuseAnswer.append(spaceP);
+                // var spaceP = document.createElement('p');
+                // excuseAnswer.append(spaceP);
                 var spaceBr = document.createElement('br');
                 excuseAnswer.appendChild(spaceBr);
             };
             if (buttonsArray[i].name == 'excuse') {
                 // console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`;
+                excuseArray.push(`I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`);
                 buttonsArray[i].excuse[0] = `I planned on getting a lot done today, but ${excuseReturn[0][useKey]} I need the day off.`;
                 buttonsArray[i].excuse[1] = `It troubles me to have to announce that ${excuseReturn[0][useKey]} This stressor requires me to take the day off.`;
                 buttonsArray[i].excuse[2] = `You know, its crazy cuz ${excuseReturn[0][useKey]} I'm takin off.`;
-                var exscuseP = document.createElement('p');
-                excuseAnswer.append(exscuseP);
+                // var exscuseP = document.createElement('p');
+                // excuseAnswer.append(exscuseP);
                 var excuseBr = document.createElement('br');
                 excuseAnswer.appendChild(excuseBr);
             };
             if (buttonsArray[i].name == 'horoscope') {
-                excuseAnswer.textContent = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`;
+                excuseArray.push(`I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`);
                 buttonsArray[i].excuse[0] = `I looked in the newspaper today, and my horoscope said: '${excuseReturn[useKey]}' I'm taking this to heart, and need your support.`;
                 buttonsArray[i].excuse[1] = `I was told the future by a respected source: '${excuseReturn[useKey]}' I think this may cause me to harm the company if I come into work today.`;
                 buttonsArray[i].excuse[2] = `Check out my horoscope: '${excuseReturn[useKey]}' Isn't that nuts?.`;
-                var horoscopeP = document.createElement('p');
-                excuseAnswer.append(horoscopeP);
+                // var horoscopeP = document.createElement('p');
+                // excuseAnswer.append(horoscopeP);
                 var horoscopeBr = document.createElement('br');
                 excuseAnswer.appendChild(horoscopeBr);
             };
             if (buttonsArray[i].name === 'weather') {
                 // console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`;
+                excuseArray.push(`when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather!`);
                 buttonsArray[i].excuse[0] = `when I looked out the window this morning, I saw the ${excuseReturn[useKey]}. I can't possibly come to work in this weather.`;
                 buttonsArray[i].excuse[1] = `today's weather report is showing ${excuseReturn[useKey]}. These weather conditions do not contribute to a positive work environment, so unfortunately, I cannot come in today.`;
                 buttonsArray[i].excuse[2] = `this ${excuseReturn[useKey]}  I can't possibly come to work in this weather!`;
-                // let weatherP = document.createElement('p');
+                // var weatherP = document.createElement('p');
                 // excuseAnswer.append(weatherP);
                 var weatherBr = document.createElement('br');
                 excuseAnswer.appendChild(weatherBr);
             };
             if (buttonsArray[i].name == 'holiday') {
                 console.log(excuseReturn[useKey])
-                excuseAnswer.textContent = `as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}!`;
+                if (excuseReturn[0] != []){
+                excuseArray.push(`as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}!`);
                 buttonsArray[i].excuse[0] = `as a ${excuseReturn[0].ethnicity} person, I need to celebrate ${excuseReturn[0][useKey]}.`;
                 buttonsArray[i].excuse[1] = `I am respectfully requesting ${excuseReturn[0][useKey]} off as a ${excuseReturn[0].ethnicity} person.`;
                 buttonsArray[i].excuse[2] = `I'm ${excuseReturn[0].ethnicity}. Today is ${excuseReturn[0][useKey]}. I'm gonna party!`;
-                var holidayP = document.createElement('p');
-                excuseAnswer.append(holidayP);
+                // var holidayP = document.createElement('p');
+                // excuseAnswer.append(holidayP);
                 var holidayBr = document.createElement('br');
                 excuseAnswer.appendChild(holidayBr);
-            };
+                }
+                else {
+                    excuseArray.push("No Holidays Today");
+                }
+            }; 
+
 
 
             // console.log(buttonsArray[i].excuse)
@@ -195,19 +202,22 @@ async function submitExcuseInput(event) {
 
             document.getElementById('email-info-form').classList.add('show');
             document.getElementById('email-info-form').classList.remove('hidden');
+            let excuseString = excuseArray.toString(); 
+            let excuseReplace = excuseString.replace(/,/g," ");
+            excuseAnswer.innerText = excuseReplace;
         };
     };
 };
 
 /* Generate Email Function */
 function generateEmail() {
-    let emailDiv = document.getElementById('email-product')
+    var emailDiv = document.getElementById('email-product')
     emailDiv.classList.remove('hidden')
     emailDiv.classList.add('show')
-    let excuseEmail = []
-    let iterateWhenExcuseAdded = 0
-    let bossName = document.getElementById('boss-name-input').value
-    let signOff = document.getElementById('sign-off-input').value
+    var excuseEmail = []
+    var iterateWhenExcuseAdded = 0
+    var bossName = document.getElementById('boss-name-input').value
+    var signOff = document.getElementById('sign-off-input').value
     if (document.getElementById('professional-email-option').classList.contains('bg-green-200')) {
     
         if (bossName !== '') {
@@ -218,7 +228,7 @@ function generateEmail() {
 
         for (i=0; i < buttonsArray.length; i++) {
 
-            if (iterateWhenExcuseAdded != 0) {
+            if (iterateWhenExcuseAdded != 0 && buttonsArray[i].excuse != '') {
                 excuseEmail.push(' Also, ')
                 console.log(iterateWhenExcuseAdded)
                 console.log(buttonsArray[1].excuse[0])
@@ -250,7 +260,7 @@ function generateEmail() {
 
         for (i=0; i < buttonsArray.length; i++) {
             
-            if (iterateWhenExcuseAdded != 0) {
+            if (iterateWhenExcuseAdded != 0 && buttonsArray[i].excuse != '') {
                 excuseEmail.push(' Also, ')
                 console.log(iterateWhenExcuseAdded)
                 console.log(buttonsArray[1].excuse[2])
@@ -282,7 +292,7 @@ function generateEmail() {
             
 
             if (buttonsArray[i].excuse != ''){
-                if (iterateWhenExcuseAdded != 0) {
+                if (iterateWhenExcuseAdded != 0 && buttonsArray[i].excuse != '') {
                     excuseEmail.push(' Also, ')
                     console.log(iterateWhenExcuseAdded)
                     iterateWhenExcuseAdded --
@@ -303,7 +313,7 @@ function generateEmail() {
     
 
     console.log(excuseEmail)
-    let emailJoined = excuseEmail.join('')
+    var emailJoined = excuseEmail.join('')
     console.log(emailJoined)
     document.getElementById('email-text').innerText = emailJoined
     excuseTextBox.classList.add('hidden');

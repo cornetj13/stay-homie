@@ -1,6 +1,13 @@
 # The Stay Homie
 A responsive, interactive application that allows users to generate excuses to stay home from work by leveraging information from third party APIs.
 
+## User Story
+As a burnt out cog in this wheel of capitalism
+
+I want to generate excuses 
+
+So that I can get out of a work day without thinking
+
 ## Description
 The Stay Homie is a tongue-in-cheek, get-out-of-work excuse generator.
 
