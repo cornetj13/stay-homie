@@ -51,35 +51,34 @@
             <button type="button" class="bg-indigo-500 m-6 mt-2 mx-20 p-2 border-2 border-black rounded box-shadow hover:scale-105" id="submit-button">Generate Excuses</button>
         </div>
 
-        <!-- Right-side Panel -->
-        <div class="bg-gray-200 flex-grow basis-3/4 border-4 border-black border-dashed relative -z-20">
-
-            <img src="./assets/images/sh_background.png" class="show flex overflow-hidden p-12 w-7/12 mx-52 my-16 absolute -z-10" id="background-image">
-        
+        <!-- Right-side Panel --> 
+            <div class="flex-grow bg-gray-200 basis-3/4 border-4 border-black border-dashed">
+                <img src="./assets/images/sh_background.png" class="show flex overflow-hidden p-12 w-7/12 mx-52 my-16 absolute" id="background-image">
             <!-- Excuse Text Box -->
             <div class="hidden" id="excuse-text-box"> 
                 
                 <h4 class="hidden fun-font mt-9 mr-10 text-xl text-center" id="excuse-title">Your Excuses!</h4>
                 
                 <div id="excuse-results"
-                    class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs overflow-auto">
+                    class="results-container bg-gray-100 flex-grow mx-11 mt-7 border-2 border-black w-11/12 h-64 text-xs relative overflow-auto">
 
                     <h5 id="excuse-text"></h5>
 
-                    <div class="flex justify-around z-10">
-                        <div id="astro-container" class="hidden fun-font w-44 mt-12 border-2 border-black rounded box-shadow tracking-wider text-center text-lg bg-gradient-to-r from-blue-500 to-red-500">
-                            <label id="astro-sign-label" for="astro-sign" class="">♈♉♊♋♌♍<br>Astrological Sign?<br>♎♏♐♑♒♓<br></label>
+                    <div class="flex justify-around relative">
+                        <div id="astro-container" class="hidden w-44 mt-12 border-2 border-black rounded box-shadow tracking-wider text-center text-lg bg-gradient-to-r from-blue-500 to-red-500">
+                            <label id="astro-sign-label" for="astro-sign" class="fun-font">♈♉♊♋♌♍<br>Astrological Sign?<br>♎♏♐♑♒♓<br></label>
                             <input type="text" class="mt-2 h-8 w-32 border-2 border-black rounded box-shadow"
                             id="astro-sign-input" name="astro-sign" value=""><br><br>
                         </div>
-                        <div id="location-container" class="hidden fun-font w-44 mt-12 border-2 border-black rounded box-shadow tracking-wider text-center text-lg bg-gradient-to-r from-green-500 to-yellow-300">
-                            <label id="location-label" for="location">🌎🏙🌎🏙🌎🏙<br>Current Location:<br>🏙🌎🏙🌎🏙🌎<br></label>
+                        <div id="location-container" class="hidden w-44 mt-12 border-2 border-black rounded box-shadow tracking-wider text-center text-lg bg-gradient-to-r from-green-500 to-yellow-300">
+                            <label id="location-label" for="location" class="fun-font">🌎🏙🌎🏙🌎🏙<br>Current Location:<br>🏙🌎🏙🌎🏙🌎<br></label>
                             <input type="text" class="mt-2 h-8 w-32 border-2 border-black rounded box-shadow"
                             id="location-input" name="location" value=""><br><br>
                         </div>
                     </div>
                 </div>
             </div>
+          
 
             <!-- Email Info Form -->
             <div class="hidden m-6" id="email-info-form">
